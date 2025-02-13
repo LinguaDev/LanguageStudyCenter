@@ -1,9 +1,12 @@
-document.getElementById('download-guide').addEventListener('click', function () {
-    alert('Thanks for your interest! Your free guide will be available soon.');
-  });
-  
-  document.getElementById('contact-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    alert('Thank you for reaching out! We will get back to you soon.');
-  });
-  
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+navLinks.addEventListener('click', (event) => {
+    if (event.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+    }
+});
