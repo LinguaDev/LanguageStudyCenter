@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Spanish</title>
     <link rel="stylesheet" href="main-spanish.css">
+    <link rel="stylesheet" href="../header.css">
 </head>
 <body>
+    <div id="header-container"></div><!--general menu link-->
+    <div id="header-container"></div>
     <header>
         <h1>Learn Spanish</h1>
         <nav>
@@ -79,6 +82,29 @@
         <p>Email: info@learnspanish.com</p>
         <p>Phone: +1-555-123-4567</p>
     </footer>
+<!--code to load hamburger menu in all pages-->
+    <script>
+        fetch('/header.html') // Corrected path: /header.html or header.html
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-container').innerHTML = html;
+
+                // Load header.js and THEN initialize the hamburger menu
+                const script = document.createElement('script');
+                script.src = '/header.js'; // Corrected path: /header.js or header.js
+
+                // Initialize the hamburger menu AFTER header.js loads AND the DOM is ready
+                script.onload = () => {
+                   if (typeof initializeHamburgerMenu === 'function') { // Check if the function is defined
+                      initializeHamburgerMenu();
+                   } else {
+                     console.error('initializeHamburgerMenu is not defined. Check header.js.');
+                   }
+                };
+
+                document.body.appendChild(script);
+            });
+    </script>
 
     <script src="spanish.js"></script>
 </body>
