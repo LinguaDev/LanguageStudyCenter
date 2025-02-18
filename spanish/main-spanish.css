@@ -91,3 +91,8 @@ footer {
         grid-template-columns: 1fr; /* Single column on smaller screens */
     }
 }
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
