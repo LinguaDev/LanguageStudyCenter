@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../header.css">
 </head>
 <body>
-    <div id="header-container"></div><!--general menu link-->
+    <div id="main-header-container"></div><!--general menu link-->
     <div id="header-container"></div>
     <header>
         <h1>Learn Spanish</h1>
@@ -84,14 +84,14 @@
     </footer>
 <!--code to load hamburger menu in all pages-->
     <script>
-        fetch('/header.html') // Corrected path: /header.html or header.html
+        fetch('../header.html') // Corrected path: /header.html or header.html
             .then(response => response.text())
             .then(html => {
-                document.getElementById('header-container').innerHTML = html;
+                document.getElementById('main-header-container').innerHTML = html;
 
                 // Load header.js and THEN initialize the hamburger menu
                 const script = document.createElement('script');
-                script.src = '/header.js'; // Corrected path: /header.js or header.js
+                script.src = '../header.js'; // Corrected path: /header.js or header.js
 
                 // Initialize the hamburger menu AFTER header.js loads AND the DOM is ready
                 script.onload = () => {
