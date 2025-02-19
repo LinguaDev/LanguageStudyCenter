@@ -1,0 +1,118 @@
+/* style.css */
+
+/* Basic Page Styling */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray background for the whole page */
+    color: #333; /* Dark gray text color for better contrast */
+    line-height: 1.6;
+}
+
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: 20px auto;
+    background: #fff; /* White background for the main content area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Slightly rounded corners for the main content */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+h3 {
+    color: #333;
+}
+
+/* About Us Section Styling */
+#about-us {
+    text-align: center;
+    background-image: url("#backgournd"); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+#about-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(5px);
+    z-index: -1;
+    opacity: 0.6; /* Reduced blur opacity */
+}
+
+.about-content {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly less transparent */
+    padding: 30px; /* Increased padding */
+    border-radius: 8px; /* Slightly more rounded */
+    max-width: 800px; /* Limit content width for better readability */
+    margin: 0 auto; /* Center the content */
+}
+
+/* Text Colors for Contrast */
+#about-us h2, #about-us h3 {
+    color: #333; /* Dark heading color */
+}
+
+#about-us p, #about-us li {
+    color: #555; /* Medium-dark paragraph color */
+}
+
+#about-us a {
+    color: #007bff; /* Standard blue link color */
+}
+
+#about-us a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* Image Styling */
+.about-image {
+    width: 180px; /* Slightly larger image */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to the image */
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Or relative, depending on your layout needs */
+    width: 100%;
+    bottom: 0; /* Only if position is fixed */
+}
+
+/* Styles for the donation form (adjust as needed) */
+#about-us form {
+    margin-top: 20px;
+    text-align: center; /* Center the donate button */
+}
+
+#about-us form input[type="image"] {
+    /* Style the donate button (e.g., size, border, etc.) */
+    width: 150px; /* Example width */
+    height: auto; /* Maintain aspect ratio */
+    border: none;
+    cursor: pointer;
+}
