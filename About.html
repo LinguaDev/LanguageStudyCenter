@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Learning Center - About Us</title>
-    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="About.css">
 </head>
 <body>
@@ -53,14 +53,14 @@
     </footer>
     <!--code to load hamburger menu in all pages-->
     <script>
-        fetch('../header.html') // Corrected path: /header.html or header.html
+        fetch('header.html') // Corrected path: /header.html or header.html
             .then(response => response.text())
             .then(html => {
                 document.getElementById('main-header-container').innerHTML = html;
 
                 // Load header.js and THEN initialize the hamburger menu
                 const script = document.createElement('script');
-                script.src = '../header.js'; // Corrected path: /header.js or header.js
+                script.src = 'header.js'; // Corrected path: /header.js or header.js
 
                 // Initialize the hamburger menu AFTER header.js loads AND the DOM is ready
                 script.onload = () => {
