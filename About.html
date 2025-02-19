@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning Center - About Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Language Learning Center</div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-us">
+            <h2>About LLC and a bit about Me!</h2>
+            <div class="about-content">
+                <img src="Juan.png" alt="Language Learning Center Team" class="about-image">
+
+                <p>Welcome to the Language Learning Center! I'm Juan Pineda, a Nicaraguan English and Spanish teacher, and I'm thrilled to share this project with you.  All the resources on this site are completely free to use. I'm currently developing this platform as a way to practice and improve my web development skills, and I'm hosting it on GitHub.</p>
+
+                <p>My goal is to make language learning accessible to everyone. I believe that language opens doors to new opportunities and connections, and I'm passionate about helping others achieve their language learning goals.  I hope you find the materials here useful!</p>
+
+                <p>If you find these resources helpful and would like to show your support, I encourage you to consider making a donation.  All donations will go directly to support people in need in Nicaragua.  It's a wonderful way to give back and express your gratitude for the resources you've used.</p>
+
+                <p>Thank you for visiting the Language Learning Center. I hope you enjoy the resources and have a successful language learning journey!</p>
+
+                <h3>About Me</h3>
+                <p>I'm Juan Pineda, a Nicaraguan English and Spanish teacher.  This project is a personal initiative to combine my passion for languages with my growing interest in web development.  I'm excited to share my work and contribute to the language learning community.</p>
+
+                <h3>Contact Me</h3>
+                <p>I'd love to hear from you!</p>
+                <p>Email: juancanales5019@gmail.com</p>
+                <p>Phone: +505-5751-4440</p>
+
+                <h3>Support Those in Need</h3>
+                <p>If you'd like to contribute to a worthy cause in Nicaragua, please consider making a donation. Your generosity will make a real difference in the lives of those who need it most.</p>
+
+                <form action="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" method="post" target="_top">
+                    <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID"> <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="currency_code" value="USD"> <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
+                <p>(You can also donate directly via PayPal to: <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">paypal.me/JOHNJPC</a>)</p>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Juan Pineda. All rights reserved.</p>
+    </footer>
+    <style>
+        /* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif; /* Changed to Arial for a different look */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #444; /* Darker gray text */
+    background-color: #f0f0f0; /* Very light gray background */
+}
+
+header {
+    background-color: #673ab7; /* Deep purple header */
+    color: white;
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Hamburger menu styles (untouched) */
+.hamburger {
+    display: none; /* Hidden by default on larger screens */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Nav links styles */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal on larger screens */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque white on hover */
+}
+
+/* Main content styles */
+main {
+    padding: 2rem;
+    max-width: 960px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* Slightly darker shadow */
+    border-radius: 8px;
+}
+
+h2 {
+    color: #673ab7; /* Deep purple headings */
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.about-image {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); /* Slightly darker shadow */
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.about-content h3 {
+    margin-top: 1.5rem;
+    color: #673ab7;
+}
+
+.about-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 1rem;
+}
+
+.about-content li {
+    margin-bottom: 0.5rem;
+}
+
+.about-content form {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333; /* Darker gray footer */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive adjustments (example) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu on smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on smaller screens */
+        flex-direction: column;
+    }
+
+    .nav-links.active { /* Show nav links when hamburger is clicked */
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-image {
+        max-width: 100%;
+    }
+}
+
+/* styles.css */
+
+/* ... (other styles) ... */
+
+.about-image {
+    width: 150px; /* Adjust the diameter as needed */
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the circle */
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* ... (rest of your styles) ... */
+    </style>
+    <script src="script.js"></script>
+</body>
+</html>
