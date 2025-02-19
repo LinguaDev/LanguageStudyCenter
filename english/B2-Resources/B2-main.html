@@ -51,25 +51,34 @@
     </footer>
     <!--code to load hamburger menu in all pages-->
     <script>
-        fetch('../../header.html') // Corrected path: /header.html or header.html
+        fetch('../../header.html')
             .then(response => response.text())
             .then(html => {
                 document.getElementById('main-header-container').innerHTML = html;
-
-                // Load header.js and THEN initialize the hamburger menu
-                const script = document.createElement('script');
-                script.src = '../../header.js'; // Corrected path: /header.js or header.js
-
-                // Initialize the hamburger menu AFTER header.js loads AND the DOM is ready
-                script.onload = () => {
-                   if (typeof initializeHamburgerMenu === 'function') { // Check if the function is defined
-                      initializeHamburgerMenu();
-                   } else {
-                     console.error('initializeHamburgerMenu is not defined. Check header.js.');
-                   }
-                };
-
-                document.body.appendChild(script);
+    
+                // 1. Modificar el href DESPUÉS de insertar el HTML
+                setTimeout(() => { // Asegurarse de que el DOM esté completamente actualizado
+                    const aboutLink = document.querySelector('#main-header-container a[href="../About.html"]'); // Selector más específico
+                    if (aboutLink) {
+                        aboutLink.href = "../../About.html";
+                    } else {
+                        console.error("El enlace 'About' no se encontró en el header.");
+                    }
+    
+                    // 2. Cargar header.js y inicializar el menú hamburguesa
+                    const script = document.createElement('script');
+                    script.src = '../../header.js';
+    
+                    script.onload = () => {
+                        if (typeof initializeHamburgerMenu === 'function') {
+                            initializeHamburgerMenu();
+                        } else {
+                            console.error('initializeHamburgerMenu is not defined. Check header.js.');
+                        }
+                    };
+    
+                    document.body.appendChild(script);
+                }, 0); // El timeout de 0 asegura que se ejecute después de que el DOM se actualice.
             });
     </script>
     <script src="B2-main.js"></script>
