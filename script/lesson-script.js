@@ -37,7 +37,7 @@ console.log("Lesson page loaded!");
 // Example of how to add interactivity (e.g., show/hide content)
 
 const vocabularySection = document.getElementById('vocabulary');
-const pronunciationSection = document.getElementById('pronunciation');
+const pronunciationSection = document.getElementById('reading');
 const grammarSection = document.getElementById('grammar');
 const exercisesSection = document.getElementById('exercises');
 const resourcesSection = document.getElementById('resources');
@@ -68,3 +68,13 @@ const quizSection = document.getElementById('quiz');
 // }
 
 // ... (Add similar listeners for other exercises)
+function showDonationMessage() {
+    document.getElementById('donation-message').style.display = 'block';
+}
+
+function hideDonationMessage() {
+    document.getElementById('donation-message').style.display = 'none';
+}
+
+// Show the message after 5 minutes (300000 milliseconds)
+setTimeout(showDonationMessage, 300000);

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English Lesson - Greetings</title>
-    <link rel="stylesheet" href="demo.css">
-</head>
+    <link rel="stylesheet" href="../../css/lesson-style.css">
+    <link rel="stylesheet" href="../../css/donation-message.css"> </head>
 <body>
 
     <header>
@@ -14,7 +14,9 @@
     </header>
 
     <main>
-        <div class="lesson-container">  <div class="lesson-content"> <section class="lesson-section" id="video">
+        <div class="lesson-container"> 
+            <div class="lesson-content"> 
+                <section class="lesson-section" id="video">
                     <h2>Video</h2>
                     <div class="video-container">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -27,15 +29,15 @@
                         <li>Hello</li>
                         <li>Hi</li>
                         <li>Good morning</li>
-                        </ul>
+                    </ul>
                     <audio controls>
                         <source src="greetings-audio.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </section>
 
-                <section class="lesson-section" id="pronunciation">
-                    <h2>Pronunciation</h2>
+                <section class="lesson-section" id="reading ">
+                    <h2>Interactive Reading - Reading While Listening (RWL)</h2>
                     <p>Tips and exercises for pronunciation practice.</p>
                 </section>
 
@@ -59,7 +61,9 @@
                     <a href="quiz.html" class="quiz-link">Take the Quiz</a>
                 </section>
 
-            </div>  <aside class="lesson-sidebar">  <div class="progress-container">
+            </div> 
+            <aside class="lesson-sidebar"> 
+                <div class="progress-container">
                     <h3>Lesson Progress</h3>
                     <progress id="lesson-progress" value="0" max="100"></progress>
                     <p id="progress-text">0% Complete</p>
@@ -69,19 +73,46 @@
                     <ul>
                         <li><a href="#video">Video</a></li>
                         <li><a href="#vocabulary">Vocabulary</a></li>
-                        <li><a href="#pronunciation">Pronunciation</a></li>
+                        <li><a href="#reading">RWL</a></li>
                         <li><a href="#grammar">Grammar</a></li>
                         <li><a href="#exercises">Exercises</a></li>
                         <li><a href="#resources">Resources</a></li>
                         <li><a href="#quiz">Quiz</a></li>
                     </ul>
                 </nav>
-            </aside>  </div>  </main>
+            </aside> 
+        </div> 
+    </main>
 
     <footer>
-        <p>&copy; 2025 Juan Pineda</p>
+        <h3>Contact Me</h3>
+        <p>I'd love to hear from you!</p>
+        <p>Email: juancanales5019@gmail.com</p>
+        <p>Phone: +505-5751-4440</p>
+
+        <h3>Support Those in Need</h3>
+        <p>If you'd like to contribute to a worthy cause in Nicaragua, please consider making a donation. Your generosity will make a real difference in the lives of those who need it most.</p>
+
+        <form action="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+        <p>(You can also donate directly via PayPal to: <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">paypal.me/JOHNJPC</a>)</p>
+        <p>© 2025 Juan Pineda</p>
     </footer>
 
-    <script src="demo.js"></script>
+    <div id="donation-message">
+        <p>Enjoying the free lessons? Consider supporting our project with a small donation!</p>
+        <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">
+            <button>Donate via PayPal</button>
+        </a>
+        <button onclick="hideDonationMessage()">Close</button>
+    </div>
+
+    <script src="../../script/lesson-script.js"></script>
+    <script src="../../script/donation-message.js"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@ footer {
     padding: 10px;
     background-color: #333;
     color: white;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
@@ -138,4 +138,31 @@ nav li a:hover {
     overflow-y: auto; /* Add a scrollbar if content overflows */
 }
 
+/* Style for the donation message */
+#donation-message {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place even when scrolling */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Ensure it's on top */
+    text-align: center;
+}
 
+#donation-message button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Example blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#donation-message a { /* Style for the donation link within the message */
+    display: inline-block; /* Make the button behave like a block element */
+}
