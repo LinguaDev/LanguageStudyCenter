@@ -1,0 +1,82 @@
+/* about.css */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex; /* For pushing the footer */
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Ensure body is at least viewport height */
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allow main to expand to fill available space */
+}
+
+h2 {
+    color: #333;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column; /* Vertical layout by default */
+    align-items: center;  /* Center content horizontally */
+}
+
+.about-image {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative; /* Sticky footer */
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row; /* Horizontal layout on larger screens */
+        justify-content: space-around; /* Distribute space around items */
+        align-items: flex-start; /* Align to top of container */
+    }
+
+    .about-image {
+        margin-bottom: 0; /* Remove bottom margin in horizontal layout */
+    }
+}

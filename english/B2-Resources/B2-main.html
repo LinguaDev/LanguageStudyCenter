@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprende Inglés - Nivel B2</title>
-    <link rel="stylesheet" href="../../header.css">
-    <link rel="stylesheet" href="B2-main.css">
+    <link rel="stylesheet" href="../../css/level-style.css">
 </head>
 <body>
-    <div id="main-header-container"></div><!--general menu link-->
     <header>
-        <h1>Aprende Inglés - Nivel B2</h1>
-        <p>¡Alcanza un nivel intermedio alto de inglés!</p>
+        <nav class="navbar">
+            <a href="../../index.html">Home</a>
+            <a href="../../spanish/main-spanish.html">Aprende Español</a>
+            <a href="../../english/main-english.html">Learn English</a>
+        </nav>
+        <div class="header-content">
+            <h1>Aprende Inglés - Nivel B1</h1>
+        <p>¡Perfecciona tus habilidades de comunicación en inglés!</p>
+        </div>
     </header>
-
     <section>
         <div class="container">
             <h2>Lo que aprenderás en este curso B2:</h2>
@@ -49,38 +53,6 @@
     <footer>
         &copy; 2025 Juan Pineda
     </footer>
-    <!--code to load hamburger menu in all pages-->
-    <script>
-        fetch('../../header.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('main-header-container').innerHTML = html;
-    
-                // 1. Modificar el href DESPUÉS de insertar el HTML
-                setTimeout(() => { // Asegurarse de que el DOM esté completamente actualizado
-                    const aboutLink = document.querySelector('#main-header-container a[href="../About.html"]'); // Selector más específico
-                    if (aboutLink) {
-                        aboutLink.href = "../../About.html";
-                    } else {
-                        console.error("El enlace 'About' no se encontró en el header.");
-                    }
-    
-                    // 2. Cargar header.js y inicializar el menú hamburguesa
-                    const script = document.createElement('script');
-                    script.src = '../../header.js';
-    
-                    script.onload = () => {
-                        if (typeof initializeHamburgerMenu === 'function') {
-                            initializeHamburgerMenu();
-                        } else {
-                            console.error('initializeHamburgerMenu is not defined. Check header.js.');
-                        }
-                    };
-    
-                    document.body.appendChild(script);
-                }, 0); // El timeout de 0 asegura que se ejecute después de que el DOM se actualice.
-            });
-    </script>
     <script src="B2-main.js"></script>
 </body>
 </html>

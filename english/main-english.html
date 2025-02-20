@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn English</title>
-    <link rel="stylesheet" href="../header.css">
-    <link rel="stylesheet" href="main-english.css">
+    <link rel="stylesheet" href="../css/main-language.css">
 </head>
 <body>
-    <div id="main-header-container"></div><!--general menu link-->
     <header>
         <h1>Learn English</h1>
         <nav>
@@ -67,29 +65,6 @@
                 </form>
                 <p>(You can also donate directly via PayPal to: <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">paypal.me/JOHNJPC</a>)</p>
     </footer>
-    <!--code to load hamburger menu in all pages-->
-    <script>
-        fetch('../header.html') // Corrected path: /header.html or header.html
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('main-header-container').innerHTML = html;
-
-                // Load header.js and THEN initialize the hamburger menu
-                const script = document.createElement('script');
-                script.src = '../header.js'; // Corrected path: /header.js or header.js
-
-                // Initialize the hamburger menu AFTER header.js loads AND the DOM is ready
-                script.onload = () => {
-                   if (typeof initializeHamburgerMenu === 'function') { // Check if the function is defined
-                      initializeHamburgerMenu();
-                   } else {
-                     console.error('initializeHamburgerMenu is not defined. Check header.js.');
-                   }
-                };
-
-                document.body.appendChild(script);
-            });
-    </script>
     <script src="main-english.js"></script>
 </body>
 </html>
