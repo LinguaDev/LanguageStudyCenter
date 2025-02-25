@@ -519,7 +519,7 @@ progress::-moz-progress-bar {
     }
 
     .vocabulary-game iframe {
-        min-height: 320px; /* Slightly reduced iframe height on smaller screens */
+        min-height: 450px; /* Slightly reduced iframe height on smaller screens */
     }
 
     .lesson-sidebar {
@@ -586,7 +586,7 @@ progress::-moz-progress-bar {
     }
 
     .vocabulary-game iframe {
-        min-height: 280px; /* Further reduce iframe height on phones */
+        min-height: 450px; /* Further reduce iframe height on phones */
     }
 
     .lesson-sidebar {
