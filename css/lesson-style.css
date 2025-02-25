@@ -1,304 +1,773 @@
-/* Reset default styles for consistency */
-* {
+/* lesson-style.css - Improved Styles for English Lesson Page (Sticky Sidebar & Thermometer Progress) */
+
+/* ------------------------------------ */
+/* 1. Reset and Basic Body Styles */
+/* ------------------------------------ */
+
+/* Use a more comprehensive reset for cross-browser consistency */
+*, *::before, *::after {
+    box-sizing: border-box; /* Inherit box-sizing to make it easier to manage */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light grey background for the entire page */
+    -webkit-font-smoothing: antialiased; /* Improve font rendering for webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Improve font rendering for Firefox on macOS */
 }
 
-/* Header Styles */
-header {
-    background-color: #2c3e50;
+/* ------------------------------------ */
+/* 2. Header Styles - .lesson-header */
+/* ------------------------------------ */
+
+.lesson-header {
+    background-color: #2c3e50; /* Darker header background for better contrast */
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem; /* Slightly increased padding for better visual spacing */
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.lesson-header .lesson-title h1 { /* Target <h1> within .lesson-title */
+    font-size: 2.75rem; /* Slightly larger main title */
+    margin-bottom: 0.6rem; /* Adjust margin */
 }
 
-header p {
-    font-size: 1.2rem;
+.lesson-header .lesson-title .subtitle { /* Target subtitle paragraph */
+    font-size: 1.25rem; /* Slightly larger subtitle */
+    color: #eee; /* Lighter subtitle text */
 }
 
-/* Main Layout */
+.lesson-top-nav { /* Styles for top navigation within header */
+    margin-top: 1.5rem; /* Space out top nav from title */
+}
+
+.lesson-top-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem; /* Add horizontal spacing between nav links */
+    font-weight: bold;
+    padding-bottom: 0.25rem; /* Give a little space below for underline effect */
+    transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+    border-bottom: 2px solid transparent; /* Underline on hover using border */
+}
+
+.lesson-top-nav a:hover,
+.lesson-top-nav a:focus { /* Add focus state for accessibility */
+    color: #3498db; /* Highlight color on hover/focus */
+    border-bottom-color: #3498db; /* Underline color on hover/focus */
+}
+
+
+/* ------------------------------------ */
+/* 3. Main Layout - .lesson-main, .lesson-container, etc. */
+/* ------------------------------------ */
+
+.lesson-main {
+    padding: 2rem 0; /* Vertical padding for main content area */
+}
+
 .lesson-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
     max-width: 1200px;
-    margin: 2rem auto;
-    gap: 2rem;
-    padding: 0 1rem;
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+    gap: 2.5rem; /* Increased gap between content and sidebar */
+    padding-left: 1.5rem; /* Consistent left and right padding */
+    padding-right: 1.5rem;
 }
 
 .lesson-content {
-    flex: 2;
-    min-width: 300px;
+    flex: 2; /* Content takes up 2/3 of available space */
+    min-width: 320px; /* Slightly wider min-width for content */
 }
 
 .lesson-sidebar {
-    flex: 1;
-    min-width: 250px;
+    flex: 1; /* Sidebar takes up 1/3 of available space */
+    min-width: 280px; /* Slightly wider min-width for sidebar */
 }
 
-/* Lesson Content Sections */
+
+/* ------------------------------------ */
+/* 4. Lesson Sections - .lesson-section */
+/* ------------------------------------ */
+
 .lesson-section {
     background-color: white;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem; /* Increased padding for sections */
+    margin-bottom: 2.5rem; /* Increased margin between sections */
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+}
+
+.lesson-section:last-child { /* Remove bottom margin from the last section */
+    margin-bottom: 0;
 }
 
 .lesson-section h2 {
     color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
+    margin-bottom: 1.2rem; /* Increased margin below section titles */
+    font-size: 2rem; /* Larger section title font size */
+    font-weight: bold; /* Make section titles bold */
+    border-bottom: 3px solid #e0e0e0; /* Add a subtle underline to titles */
+    padding-bottom: 0.5rem; /* Space between title text and underline */
 }
 
-/* Lesson Overview */
-.lesson-overview {
-    margin: 1rem 0;
+.lesson-section p { /* Style paragraphs within lesson sections */
+    margin-bottom: 1.2rem; /* Space below paragraphs */
+    color: #555; /* Slightly darker paragraph text */
 }
 
-.lesson-overview a {
+.lesson-section p:last-child { /* Remove bottom margin from last paragraph in section */
+    margin-bottom: 0;
+}
+
+
+/* ------------------------------------ */
+/* 5. Lesson Overview - .lesson-overview */
+/* ------------------------------------ */
+
+#lesson-overview { /* Style the Lesson Overview section itself */
+    background-color: #f9f9f9; /* Light background for overview section */
+    border: 1px solid #eee; /* Subtle border */
+    padding: 1.8rem; /* Padding for overview section */
+}
+
+#lesson-overview h2 { /* Style the title within the overview section */
+    color: #34495e; /* Different color for overview title */
+}
+
+.lesson-overview-nav .nav-list { /* Style the nav list in lesson overview */
+    list-style: none;
+    padding-left: 0; /* Remove default list padding */
+}
+
+.lesson-overview-nav .nav-list li { /* Style list items in lesson overview */
+    margin-bottom: 0.7rem; /* Spacing between list items */
+}
+
+.lesson-overview-nav .nav-list a {
     color: #2980b9;
     text-decoration: none;
+    font-weight: 600; /* Semi-bold links in overview */
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transition */
+}
+
+.lesson-overview-nav .nav-list a:hover,
+.lesson-overview-nav .nav-list a:focus {
+    text-decoration: underline; /* Underline on hover/focus */
+    color: #3498db; /* Slightly brighter hover/focus color */
+}
+
+#lesson-overview details { /* Style the <details> element in overview */
+    margin-top: 1rem;
+    background-color: #fff;
+    padding: 1rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+#lesson-overview summary { /* Style the <summary> element in overview */
     font-weight: bold;
+    cursor: pointer;
+    padding: 0.5rem 0;
 }
 
-.lesson-overview a:hover {
-    text-decoration: underline;
-}
 
-/* Video Section */
-.video-container {
+/* ------------------------------------ */
+/* 6. Video Section - .video-wrapper */
+/* ------------------------------------ */
+
+.video-wrapper { /* Renamed from .video-container to be more semantic */
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
+    border-radius: 8px; /* Rounded corners for video */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for video */
 }
 
-.video-container iframe {
+.video-wrapper iframe { /* Target iframe within video wrapper */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    border: none; /* Remove iframe border */
 }
 
-/* Vocabulary Section */
+
+/* ------------------------------------ */
+/* 7. Vocabulary Section - .word-list, .vocabulary-game */
+/* ------------------------------------ */
+
 .word-list {
     list-style: none;
-    margin: 1rem 0;
+    margin: 1.2rem 0; /* Increased margin for word list */
+    padding-left: 1rem; /* Add some left padding for list items */
 }
 
 .word-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #ddd;
+    padding: 0.7rem 0; /* Increased padding for list items */
+    border-bottom: 1px dashed #ddd; /* Use dashed border for visual interest */
+    font-size: 1.1rem; /* Slightly larger word list font */
+}
+
+.word-list li:last-child { /* Remove border from last item */
+    border-bottom: none;
+}
+
+.audio-figure { /* Style for audio figure */
+    margin: 1.5rem 0; /* Margin for audio figure */
+    text-align: center; /* Center align audio and caption */
+}
+
+.audio-figure figcaption { /* Style for audio figcaption */
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.5rem;
 }
 
 audio {
     display: block;
-    margin: 1rem 0;
-    width: 100%;
-    max-width: 300px;
+    margin: 1.2rem auto; /* Center audio player and add margin */
+    width: 95%; /* Make audio player slightly wider */
+    max-width: 350px; /* Set max width for audio player */
 }
 
 .vocabulary-game {
-    margin-top: 1.5rem;
+    margin-top: 2rem; /* Increased margin above vocab game */
+    padding: 1.5rem; /* Add padding to vocab game section */
+    background-color: #f8f8f8; /* Lighter background for vocab game */
+    border-radius: 8px; /* Rounded corners for vocab game section */
+    border: 1px solid #eee; /* Subtle border for vocab game section */
 }
 
 .vocabulary-game h3 {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem; /* Slightly larger game title */
+    color: #34495e; /* Different color for game title */
+    margin-bottom: 0.8rem; /* Adjust margin below game title */
+    text-align: center; /* Center align game title */
 }
 
 .vocabulary-game iframe {
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 6px; /* Rounded corners for game iframe */
+    display: block; /* Ensure iframe is block level */
+    width: 100%; /* Iframe takes full width */
+    min-height: 350px; /* Increased min-height for iframe */
+    margin: 0 auto; /* Center iframe horizontally */
 }
 
-/* Sidebar Styles */
+
+/* ------------------------------------ */
+/* 8. Sidebar Styles - .lesson-sidebar, .lesson-progress, .lesson-quick-nav */
+/* ------------------------------------ */
+
 .lesson-sidebar {
-    background-color: #ecf0f1;
-    padding: 1.5rem;
-    border-radius: 8px;
+    background-color: #ecf0f1; /* Lighter sidebar background */
+    padding: 2rem; /* Increased padding for sidebar */
+    border-radius: 10px; /* Rounded corners for sidebar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtler shadow for sidebar */
 }
 
-.progress-container {
-    margin-bottom: 2rem;
+.lesson-progress {
+    margin-bottom: 2.5rem; /* Increased margin below progress section */
+    text-align: center; /* Center align content in progress section */
 }
 
-.progress-container h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+.lesson-progress h3 {
+    font-size: 1.5rem; /* Slightly larger progress title */
+    margin-bottom: 0.8rem; /* Adjust margin below progress title */
+    color: #34495e; /* Different color for progress title */
+}
+
+.progress-bar-container { /* Container for progress bar and percentage text */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack progress bar and text vertically */
+    align-items: stretch; /* Stretch progress bar to container width */
 }
 
 progress {
     width: 100%;
-    height: 20px;
-    margin-bottom: 0.5rem;
+    height: 24px; /* Slightly taller progress bar */
+    margin-bottom: 0.6rem; /* Adjust margin below progress bar */
+    appearance: none; /* Reset default appearance for cross-browser styling */
+    -webkit-appearance: none; /* For Safari and Chrome */
+    -moz-appearance: none;    /* For Firefox */
+    border-radius: 12px; /* Rounded corners for progress bar */
+    background-color: #e0e0e0; /* Track color */
+    overflow: hidden; /* Ensure progress bar fill respects rounded corners */
 }
 
-#progress-text {
-    font-size: 1rem;
+/* Webkit (Chrome, Safari) progress bar styling */
+progress::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 12px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #2980b9; /* Progress fill color */
+    border-radius: 12px;
+    transition: width 0.3s ease; /* Smooth width transition */
+}
+
+/* Firefox progress bar styling */
+progress::-moz-progress-bar {
+    background-color: #2980b9; /* Progress fill color */
+    border-radius: 12px;
+    transition: width 0.3s ease; /* Smooth width transition */
+}
+
+
+#progress-percentage { /* Renamed from #progress-text to be more descriptive */
+    font-size: 1.1rem; /* Slightly larger progress percentage text */
     color: #7f8c8d;
+    text-align: center; /* Center align percentage text */
 }
 
-.lesson-sidebar nav ul {
+
+.lesson-quick-nav {
+    margin-top: 2rem; /* Add top margin to quick nav */
+}
+
+.lesson-quick-nav h3 {
+    font-size: 1.5rem; /* Slightly larger quick nav title */
+    margin-bottom: 0.8rem; /* Adjust margin below quick nav title */
+    color: #34495e; /* Different color for quick nav title */
+}
+
+.lesson-quick-nav .nav-list { /* Style the nav list in sidebar quick nav */
     list-style: none;
+    padding-left: 0; /* Remove default list padding */
 }
 
-.lesson-sidebar nav li {
-    margin: 0.5rem 0;
+.lesson-quick-nav .nav-list li {
+    margin-bottom: 0.7rem; /* Spacing between list items in quick nav */
 }
 
-.lesson-sidebar nav a {
+.lesson-quick-nav .nav-list a {
     color: #2980b9;
     text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Smooth transition for nav links */
+    display: block; /* Make nav links block level for better click area */
+    padding: 0.4rem 0; /* Add vertical padding to nav links */
 }
 
-.lesson-sidebar nav a:hover {
-    text-decoration: underline;
+.lesson-quick-nav .nav-list a:hover,
+.lesson-quick-nav .nav-list a:focus {
+    text-decoration: underline; /* Underline on hover/focus */
+    color: #3498db; /* Highlight color on hover/focus */
 }
 
-/* Footer Styles */
-footer {
+
+/* ------------------------------------ */
+/* 9. Footer Styles - .lesson-footer, .footer-contact, .footer-donation */
+/* ------------------------------------ */
+
+.lesson-footer { /* Renamed from footer to .lesson-footer for specificity */
     background-color: #2c3e50;
     color: white;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem; /* Increased padding for footer */
     text-align: center;
+    margin-top: 4rem; /* Add margin above footer to separate from content */
 }
 
-footer section {
-    margin-bottom: 2rem;
+.lesson-footer section {
+    margin-bottom: 2.5rem; /* Increased margin between footer sections */
 }
 
-footer h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+.lesson-footer section:last-child { /* Remove bottom margin from last footer section */
+    margin-bottom: 0;
 }
 
-footer a {
+.lesson-footer h3 {
+    font-size: 1.5rem; /* Slightly larger footer section titles */
+    margin-bottom: 0.8rem; /* Adjust margin below footer section titles */
+}
+
+.lesson-footer a {
     color: #3498db;
     text-decoration: none;
+    transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Smooth transition */
 }
 
-footer a:hover {
+.lesson-footer a:hover,
+.lesson-footer a:focus {
     text-decoration: underline;
+    color: #5dade2; /* Lighter blue on hover/focus */
 }
 
 .footer-contact address {
-    font-style: normal;
+    font-style: normal; /* Ensure address is not italicized */
+    line-height: 1.8; /* Improve line height in address */
 }
 
-.donate-button {
+.paypal-donation { /* Style for paypal donation section */
+    margin-top: 1.5rem; /* Add margin above paypal donation form */
+}
+
+.paypal-donation .donate-button {
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
+    opacity: 0.9; /* Slightly reduce opacity of button image */
+    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
 }
 
-.donate-button img {
-    vertical-align: middle;
+.paypal-donation .donate-button:hover,
+.paypal-donation .donate-button:focus {
+    opacity: 1; /* Full opacity on hover/focus */
 }
 
-.copyright {
+.paypal-donation .donate-button img {
+    vertical-align: middle; /* Align image vertically within button */
+    max-width: 150px; /* Limit max width of donate button image */
+}
+
+.paypal-donation .direct-paypal-link { /* Style for direct paypal link paragraph */
+    margin-top: 0.8rem; /* Add margin above direct link */
+    font-size: 0.9rem; /* Slightly smaller font for direct link */
+    color: #eee; /* Lighter color for direct link text */
+}
+
+
+.lesson-footer .copyright { /* Style copyright paragraph in footer */
     font-size: 0.9rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem; /* Increased margin above copyright */
+    color: #ddd; /* Lighter copyright text */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+.lesson-footer .copyright a { /* Style copyright links */
+    color: #ddd; /* Lighter link color in copyright */
+}
+
+
+/* ------------------------------------ */
+/* 10. Responsive Design - Media Queries - UPDATED FOR STICKY SIDEBAR & THERMOMETER */
+/* ------------------------------------ */
+
+/* Larger breakpoint for tablets and larger phones - STICKY SIDEBAR ACTIVE */
+@media (min-width: 901px) { /* Adjusted media query to activate sticky sidebar for larger screens */
+    .lesson-sidebar {
+        position: sticky; /* Make sidebar sticky */
+        top: 20px;       /* Stick 20px from the top */
+        align-self: start; /* Prevent sidebar from stretching full height in flex layout */
+        height: calc(100vh - 40px); /* Initial height calculation, may need adjustment */
+        overflow-y: auto; /* Enable scroll if sidebar content overflows - IMPORTANT */
+        padding-top: 2.5rem; /* Keep consistent padding */
+        padding-bottom: 2.5rem; /* Keep consistent padding */
+    }
+
     .lesson-container {
-        flex-direction: column;
+        padding-right: calc(1.5rem + 10px); /* Add extra right padding for visual balance with sticky sidebar */
+    }
+}
+
+
+@media (max-width: 900px) { /* Breakpoint for tablets and smaller - THERMOMETER PROGRESS BAR & NO STICKY SIDEBAR */
+    .lesson-container {
+        flex-direction: column; /* Stack content and sidebar vertically */
+        gap: 2rem; /* Reduce gap in stacked layout */
     }
 
-    header h1 {
-        font-size: 2rem;
+    .lesson-sidebar {
+        order: -1; /* Move sidebar above content in stacked layout */
+        margin-bottom: 2rem; /* Add bottom margin to sidebar when stacked */
     }
 
-    header p {
-        font-size: 1rem;
+    /* HIDE LESSON PROGRESS SECTION OF SIDEBAR ON SMALLER SCREENS - Thermometer replaces it */
+    .lesson-progress {
+        display: none; /* Hide the standard progress section on smaller screens */
+    }
+
+    .lesson-header {
+        padding: 2rem 1rem; /* Reduce header padding on smaller screens */
+    }
+
+    .lesson-header .lesson-title h1 {
+        font-size: 2.2rem; /* Slightly smaller main title on smaller screens */
+    }
+
+    .lesson-header .lesson-title .subtitle {
+        font-size: 1.1rem; /* Slightly smaller subtitle on smaller screens */
+    }
+
+    .lesson-top-nav {
+        margin-top: 1rem; /* Reduce top nav margin on smaller screens */
+        display: flex; /* Make top nav links flex container */
+        flex-direction: column; /* Stack top nav links vertically */
+        align-items: center; /* Center align top nav links */
+    }
+
+    .lesson-top-nav a {
+        margin: 0.5rem 0; /* Vertical margin for stacked top nav links */
+    }
+
+    .lesson-section {
+        padding: 1.8rem; /* Slightly reduced section padding on smaller screens */
+        margin-bottom: 2rem; /* Slightly reduced section margin */
     }
 
     .lesson-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Smaller section title font size on smaller screens */
     }
 
     .vocabulary-game iframe {
-        height: 300px;
+        min-height: 320px; /* Slightly reduced iframe height on smaller screens */
+    }
+
+    .lesson-sidebar {
+        padding: 1.8rem; /* Slightly reduced sidebar padding */
+
+    }
+
+    .lesson-quick-nav h3,
+    .lesson-footer h3,
+    .vocabulary-game h3 {
+        font-size: 1.4rem; /* Slightly smaller sidebar/footer titles */
+    }
+
+    .paypal-donation .donate-button img {
+        max-width: 130px; /* Slightly smaller donate button image */
+    }
+
+    .lesson-footer {
+        padding: 2rem 1rem; /* Reduced footer padding on smaller screens */
     }
 }
-/* Donation Message Styles */
+
+
+/* Smaller breakpoint for mobile phones - THERMOMETER PROGRESS BAR STYLES */
+@media (max-width: 600px) { /* Added smaller breakpoint for phones */
+    .lesson-header {
+        padding: 1.5rem 0.8rem; /* Further reduce header padding on very small screens */
+    }
+
+    .lesson-header .lesson-title h1 {
+        font-size: 2rem; /* Even smaller main title on phones */
+    }
+
+    .lesson-header .lesson-title .subtitle {
+        font-size: 1rem; /* Even smaller subtitle on phones */
+    }
+
+    .lesson-top-nav a {
+        font-size: 0.9rem; /* Smaller top nav links on phones */
+        margin: 0.4rem 0; /* Adjust margin for phone size */
+    }
+
+
+    .lesson-container {
+        padding-left: 0.8rem; /* Further reduce container padding on phones */
+        padding-right: 0.8rem;
+    }
+
+    .lesson-section {
+        padding: 1.5rem; /* Further reduce section padding on phones */
+        margin-bottom: 1.8rem; /* Further reduce section margin */
+    }
+
+    .lesson-section h2 {
+        font-size: 1.4rem; /* Even smaller section title font size on phones */
+    }
+
+    .word-list li,
+    #progress-percentage,
+    .lesson-quick-nav .nav-list a,
+    .paypal-donation .direct-paypal-link,
+    .lesson-footer .copyright {
+        font-size: 0.95rem; /* Slightly smaller text elements on phones */
+    }
+
+    .vocabulary-game iframe {
+        min-height: 280px; /* Further reduce iframe height on phones */
+    }
+
+    .lesson-sidebar {
+        padding: 1.5rem; /* Further reduce sidebar padding on phones */
+        display: none; /* **HIDE ENTIRE SIDEBAR ON MOBILE** - Thermometer only shown */
+    }
+
+    .lesson-progress h3, /* Although hidden, keep existing styles if needed later */
+    .lesson-quick-nav h3,
+    .lesson-footer h3,
+    .vocabulary-game h3 {
+        font-size: 1.3rem; /* Even smaller sidebar/footer titles on phones */
+    }
+
+    .paypal-donation .donate-button img {
+        max-width: 110px; /* Even smaller donate button image on phones */
+    }
+
+    .lesson-footer {
+        padding: 1.8rem 0.8rem; /* Further reduced footer padding on phones */
+    }
+
+    .paypal-donation .direct-paypal-link {
+        font-size: 0.85rem; /* Even smaller direct paypal link on phones */
+    }
+
+}
+
+
+/* ------------------------------------ */
+/* 11. Donation Message Styles - #donation-message */
+/* ------------------------------------ */
+
 #donation-message {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    padding: 1.5rem; /* Increased padding for donation message */
+    border-radius: 10px; /* More rounded corners for donation message */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25); /* Stronger shadow for donation message */
+    max-width: 320px; /* Slightly wider donation message box */
     text-align: center;
     z-index: 1000;
+    border: 1px solid #eee; /* Subtle border for donation message */
 }
 
 #donation-message[aria-hidden="true"] {
     display: none;
 }
 
-#donation-message p {
-    margin-bottom: 1rem;
-    font-size: 1rem;
+#donation-message h4 { /* Style donation message title */
+    font-size: 1.4rem; /* Larger donation message title */
+    color: #34495e; /* Different color for donation message title */
+    margin-bottom: 1rem; /* Margin below title */
+    font-weight: bold; /* Bold title */
 }
 
-#donation-message button {
+#donation-message p {
+    margin-bottom: 1.2rem; /* Increased margin below paragraph in donation message */
+    font-size: 1.05rem; /* Slightly larger paragraph text in donation message */
+    color: #666; /* Slightly darker paragraph text in donation message */
+}
+
+.donation-actions { /* Container for donation message buttons */
+    display: flex; /* Use flexbox for button layout */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 0.8rem; /* Spacing between buttons */
+    margin-top: 1rem; /* Add top margin to button group */
+}
+
+.donation-actions button { /* Style buttons within donation message actions */
     background-color: #2980b9;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.6rem 1.2rem; /* Slightly larger button padding */
+    border-radius: 6px; /* Rounded corners for buttons */
     cursor: pointer;
-    margin: 0 0.5rem;
+    font-size: 1rem; /* Slightly larger button font */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to buttons */
 }
 
-#donation-message button:hover {
-    background-color: #3498db;
+.donation-actions button:hover,
+.donation-actions button:focus {
+    background-color: #3498db; /* Lighter blue on hover/focus */
+    transform: scale(1.03); /* Slightly scale up on hover/focus */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover/focus */
 }
 
-#donation-message a button {
-    background-color: #e74c3c;
+.donation-actions .donate-link button { /* Style the donate button specifically */
+    background-color: #e74c3c; /* Red color for donate button */
 }
 
-#donation-message a button:hover {
-    background-color: #c0392b;
+.donation-actions .donate-link button:hover,
+.donation-actions .donate-link button:focus {
+    background-color: #c0392b; /* Darker red on hover/focus for donate button */
 }
 
-/* Responsive Adjustments */
-@media (max-width: 480px) {
-    #donation-message {
-        bottom: 10px;
-        right: 10px;
-        max-width: 250px;
+.donation-actions .cancel-button { /* Style the cancel button specifically */
+    background-color: #7f8c8d; /* Grey color for cancel button */
+}
+
+.donation-actions .cancel-button:hover,
+.donation-actions .cancel-button:focus {
+    background-color: #95a5a6; /* Lighter grey on hover/focus for cancel button */
+}
+
+
+/* ------------------------------------ */
+/* 12. Utility Classes (Optional, but good practice) */
+/* ------------------------------------ */
+
+/* Example: Class to visually highlight important text */
+.highlight {
+    color: #e74c3c; /* Red color for highlight */
+    font-weight: bold;
+}
+
+/* Example: Class for slightly muted text */
+.muted-text {
+    color: #777;
+    font-style: italic;
+}
+
+
+/* ------------------------------------ */
+/* 13. Thermometer Progress Bar Styles - FOR SMALLER SCREENS ONLY - UPDATED: NO PERCENTAGE TEXT */
+/* ------------------------------------ */
+
+.thermometer-progress-bar {
+    position: fixed; /* Fixed position on viewport */
+    top: 50%;          /* Center vertically */
+    right: 15px;       /* Position from right edge */
+    transform: translateY(-50%); /* Fine-tune vertical centering */
+    width: 20px;        /* Width of thermometer */
+    height: 150px;       /* Height of thermometer */
+    background-color: #e0e0e0; /* Thermometer background track */
+    border-radius: 10px; /* Rounded thermometer shape */
+    border: 2px solid #ccc; /* Thermometer border */
+    overflow: hidden;     /* Clip progress fill to rounded shape */
+    display: none;       /* Initially hidden - shown in media query */
+    z-index: 999;        /* Ensure it's above other content */
+}
+
+.thermometer-progress-fill {
+    height: 0%;         /* Initial fill height is 0 */
+    width: 100%;        /* Fill full width of thermometer */
+    background-color: #4db6ac; /* Fill color - teal/green from before */
+    transition: height 0.4s ease; /* Smooth height animation */
+    position: absolute; /* Position fill absolutely inside thermometer */
+    bottom: 0;         /* Align fill to bottom */
+}
+
+.thermometer-progress-percentage {
+    position: absolute; /* Position percentage text */
+    top: 50%;          /* Vertically centered */
+    left: 50%;         /* Horizontally centered */
+    transform: translate(-50%, -50%); /* Fine-tune centering */
+    color: #555;        /* Percentage text color */
+    font-size: 0.8rem; /* Smaller percentage text */
+    white-space: nowrap; /* Prevent text wrapping */
+    display: none; /* **HIDE PERCENTAGE TEXT - COLOR ONLY THERMOMETER** */
+}
+
+
+/* Show thermometer progress bar on smaller screens (using same breakpoint as sidebar stacking) */
+@media (max-width: 900px) {
+    .thermometer-progress-bar {
+        display: block; /* Show thermometer bar on smaller screens */
     }
+}
 
-    #donation-message p {
-        font-size: 0.9rem;
+/* Even smaller adjustments for mobile (optional - adjust as needed) */
+@media (max-width: 600px) {
+    .thermometer-progress-bar {
+        right: 10px;     /* Adjust right position on very small screens */
+        width: 16px;      /* Slightly thinner thermometer on phones */
+        height: 120px;     /* Slightly shorter thermometer on phones */
     }
-
-    #donation-message button {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+    .thermometer-progress-percentage {
+        font-size: 0.7rem; /* Even smaller percentage text on phones */
     }
 }

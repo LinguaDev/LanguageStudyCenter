@@ -1,81 +1,91 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+// lesson-script.js - Improved JavaScript for English Lesson Page
 
-        const targetId = this.getAttribute('href').substring(1);
+(function() { // IIFE to encapsulate script and prevent global scope pollution
+
+    console.log("Lesson page loaded!"); // Initialization log
+
+    /* ------------------------------------ */
+    /* 1. Smooth Scrolling for Navigation */
+    /* ------------------------------------ */
+
+    function smoothScrollToSection(targetId) {
         const targetElement = document.getElementById(targetId);
-
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
-    });
-});
-
-// Progress bar update on scroll
-const lessonSections = document.querySelectorAll('.lesson-section');
-const lessonProgress = document.getElementById('lesson-progress');
-const progressText = document.getElementById('progress-text');
-
-window.addEventListener('scroll', () => {
-    let totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = window.pageYOffset || document.documentElement.scrollTop;
-
-    let progress = 0;
-
-    if (totalHeight > 0) { // Avoid division by zero
-        progress = (scrolled / totalHeight) * 100;
     }
 
-    lessonProgress.value = progress;
-    progressText.textContent = `${Math.round(progress)}% Complete`;
-});
+    document.querySelectorAll('.lesson-top-nav a, .lesson-quick-nav a, .lesson-overview-nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            smoothScrollToSection(targetId);
+        });
+    });
 
-console.log("Lesson page loaded!");
+    /* ------------------------------------ */
+    /* 2. Lesson Progress Bar Update on Scroll - UPDATED FOR THERMOMETER */
+    /* ------------------------------------ */
+
+    const lessonSections = document.querySelectorAll('.lesson-section');
+    const lessonProgress = document.getElementById('lesson-progress');
+    const progressPercentageSpan = document.getElementById('progress-percentage'); // More descriptive name
+
+    // **NEW: Get reference to the thermometer fill element**
+    const thermometerFill = document.getElementById('thermometer-fill');
+
+    function updateProgressBar() {
+        const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = window.scrollY; // Use window.scrollY for better cross-browser compatibility
+        let progress = 0;
+
+        if (totalHeight > 0) {
+            progress = (scrolled / totalHeight) * 100;
+        }
+
+        lessonProgress.value = progress; // Standard progress bar (still updated)
+        progressPercentageSpan.textContent = `${Math.round(progress)}% Complete`; // Update percentage text
+
+        // **NEW: Update thermometer fill height based on progress**
+        if (thermometerFill) { // Check if the thermometer element exists (for safety)
+            thermometerFill.style.height = `${progress}%`;
+        }
+    }
+
+    window.addEventListener('scroll', updateProgressBar);
+    window.addEventListener('load', updateProgressBar); // Initial update on page load
 
 
-// Example of how to add interactivity (e.g., show/hide content)
+    /* ------------------------------------ */
+    /* 3. Donation Message Functionality */
+    /* ------------------------------------ */
 
-const vocabularySection = document.getElementById('vocabulary');
-const pronunciationSection = document.getElementById('reading');
-const grammarSection = document.getElementById('grammar');
-const exercisesSection = document.getElementById('exercises');
-const resourcesSection = document.getElementById('resources');
-const quizSection = document.getElementById('quiz');
+    const donationMessage = document.getElementById('donation-message');
+
+    function showDonationMessage() {
+        donationMessage.removeAttribute('hidden'); // Use hidden attribute for visibility control
+        donationMessage.setAttribute('aria-hidden', 'false'); // Update aria-hidden for accessibility
+    }
+
+    function hideDonationMessage() {
+        donationMessage.setAttribute('hidden', 'hidden'); // Use hidden attribute to hide
+        donationMessage.setAttribute('aria-hidden', 'true'); // Update aria-hidden for accessibility
+    }
+
+    // Attach hideDonationMessage to the close button directly in HTML (onclick="hideDonationMessage()")
+
+    // Show the message after 5 minutes (300000 milliseconds)
+    setTimeout(showDonationMessage, 300000);
 
 
-// Example: Show/hide vocabulary on button click (add a button to your HTML)
+    /* ------------------------------------ */
+    /* 4. Interactive Elements (Example - Expandable Overview - Already in HTML as <details>) */
+    /*     - Removed Example JS for Show/Hide Vocabulary, Exercises (Out of Scope/Not in HTML) */
+    /* ------------------------------------ */
 
-// const showVocabularyButton = document.createElement('button');
-// showVocabularyButton.textContent = 'Show Vocabulary';
-// vocabularySection.insertBefore(showVocabularyButton, vocabularySection.querySelector('ul')); // Add button before the list
-
-// showVocabularyButton.addEventListener('click', () => {
-//     vocabularySection.querySelector('ul').style.display = (vocabularySection.querySelector('ul').style.display === 'none') ? 'block' : 'block'; // Toggle visibility
-// });
-
-// Similar logic can be applied to other sections.
+    // No JavaScript needed for <details> element for basic expand/collapse functionality.
+    // If you need custom JS interaction for other elements (e.g., exercises, interactive quizzes),
+    // you would add event listeners and logic within this section, similar to the smooth scroll example.
 
 
-// Example:  Adding event listeners to exercises (you'll need to adapt these)
-
-// const exercise1 = document.querySelector('.exercise-1'); // Replace with your actual selector
-// if (exercise1) {
-//     exercise1.addEventListener('click', () => {
-//         // Handle exercise 1 click (e.g., show feedback, update score)
-//         console.log("Exercise 1 clicked!");
-//     });
-// }
-
-// ... (Add similar listeners for other exercises)
-function showDonationMessage() {
-    document.getElementById('donation-message').style.display = 'block';
-}
-
-function hideDonationMessage() {
-    document.getElementById('donation-message').style.display = 'none';
-}
-
-// Show the message after 5 minutes (300000 milliseconds)
-setTimeout(showDonationMessage, 300000);
- 
+})(); // End IIFE
