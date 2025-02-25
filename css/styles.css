@@ -1,86 +1,34 @@
-/* Basic styles for the hamburger menu */
-.hamburger {
-  display: none;
-  cursor:pointer;
-  padding: 15px;
-}
+/* Updated CSS with improved coloring */
 
-.hamburger .bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  background-color: #551111;
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-links {
-  list-style: none;
+/* CSS Reset or Normalize (Optional, but recommended for consistency) */
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  display: flex; /* Horizontal on larger screens */
 }
 
-.nav-links li {
-  margin-left: 20px;
+/* Define a more cohesive and visually appealing color palette */
+:root {
+  --primary-color: #2E7D32;        /* A fresh, slightly darker green for primary elements (e.g., header, footer, strong accents) -  Think growth, learning */
+  --secondary-color: #FFC107;     /* A warm amber/gold for highlights and calls to action -  Think energy, knowledge */
+  --accent-color: #B2FF59;        /* A bright lime green for hover states and subtle accents - Think vibrancy, approachability */
+  --neutral-light: #F9F9F9;       /* Very light grey for backgrounds - Clean, modern */
+  --neutral-medium: #E0E0E0;      /* Medium light grey for borders and subtle UI elements -  Soft, unobtrusive */
+  --neutral-dark: #333333;        /* Dark grey for primary text -  Good readability, professional */
+  --text-color-light: #FFFFFF;     /* White text for contrast on dark backgrounds */
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-}
-
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-.nav-links.active li {
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.nav-links.active a {
-  color: #333;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .nav-links {
-      display: none;
-  }
-
-  .hamburger {
-      display: block;
-  }
-
-  .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-}
-
-/* General styles for the page */
 body {
   font-family: sans-serif;
-  margin: 0;
-  padding: 0;
   line-height: 1.6;
-  color: #333;
+  color: var(--neutral-dark); /* Primary text color */
+  background-color: var(--neutral-light); /* Light background */
 }
 
 header {
-  background-color: #f0f0f0;
-  padding: 10px 0;
+  background-color: var(--primary-color); /* Primary header background */
+  padding: 20px 0;
+  text-align: center;
 }
 
 .navbar {
@@ -92,108 +40,260 @@ header {
 
 .logo {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  color: var(--text-color-light); /* Light text on primary background */
 }
 
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--text-color-light); /* Light bars for contrast on primary */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navigation links styles */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color-light); /* Light text for nav links on primary header */
+  padding: 0.5em 0;
+  display: block;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--accent-color); /* Accent color on hover for nav links */
+}
+
+
+/* Active state for mobile navigation */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: var(--neutral-light); /* Light background for active nav */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.nav-links.active li {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--neutral-medium); /* Medium light border for active nav items */
+}
+
+.nav-links.active a {
+  color: var(--neutral-dark); /* Dark text for active nav links */
+}
+.nav-links.active a:hover,
+.nav-links.active a:focus {
+  color: var(--accent-color); /* Accent color on hover for active nav links */
+}
+
+
+/* Main content styles */
 main {
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.content-box {
-  flex: 1 0 250px; /* Adjust min-width as needed */
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 8px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: var(--box-background-color);
-  border: 1px solid var(--box-border-color);
-}
-
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  color: #333;
-}
-
-header {
-  background-color: #f0f0f0;
-  padding: 20px;
-  text-align: center; /* Center the header content */
-}
-
-nav ul {
-  padding: 0;
-  margin: 10px 0; /* Add some margin around the navigation list */
-}
-
-nav li {
-  display: inline;
-  margin: 0 15px; /* Add space between list items */
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-#hero {
-  background-image: url('hero-image.jpg'); /* Replace with your image */
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 100px 0;
-  text-align: center;
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 #levels {
-  padding: 40px;
+  padding: 40px 20px;
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .level-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
 .level-card {
-  border: 1px solid #ddd;
-  padding: 20px;
+  border: 1px solid var(--neutral-medium); /* Medium light border for level cards */
+  padding: 25px;
   text-align: center;
-  border-radius: 8px;
-  transition: transform 0.2s; /* Add a smooth transition for hover effect */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Added background-color transition */
+  background-color: var(--neutral-light); /* Light background for level cards */
 }
 
-.level-card:hover {
-  transform: scale(1.05); /* Scale up slightly on hover */
-  box-shadow: 0 4px 8px rgba(100, 92, 128, 0.1);
-  background-color: aqua;
+.level-card:hover,
+.level-card:focus-within { /* focus-within for accessibility if card contains focusable elements */
+  transform: scale(1.07);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: var(--accent-color); /* Accent color on hover for level cards */
+}
+.level-card:hover h3 a, /* Ensure link color changes on hover as well */
+.level-card:focus-within h3 a {
+  color: var(--neutral-dark); /* Or any contrasting text color you prefer on hover */
 }
 
-#resources, #courses, footer {
-  padding: 40px;
+.level-card h3 a {
+  text-decoration: none;
+  color: var(--primary-color); /* Primary color for level card titles */
+  transition: color 0.3s ease; /* Smooth color transition for title links */
+}
+
+
+/* Contact section styles */
+#contact {
+  padding: 40px 20px;
   text-align: center;
+  background-color: var(--neutral-light); /* Light background for contact section */
+  width: 100%;
+  max-width: 1200px;
 }
 
+#contact h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  color: var(--primary-color); /* Primary color for contact section headings */
+}
+
+#contact p {
+  margin-bottom: 1em;
+}
+
+/* Footer styles */
 footer {
-  background-color: #333;
-  color: white;
-  padding: 20px;
+  background-color: var(--primary-color); /* Primary color for footer background */
+  color: var(--text-color-light); /* Light text for footer */
+  padding: 25px 20px;
+  text-align: center;
+  margin-top: 40px;
 }
+
+footer p {
+  font-size: 0.9em;
+}
+
+footer a, #contact a {
+  color: var(--secondary-color); /* Secondary color for links in footer and contact */
+  text-decoration: underline; /* Keep underlines for links in footer/contact for accessibility */
+  transition: color 0.3s ease;
+}
+footer a:hover, footer a:focus, #contact a:hover, #contact a:focus {
+  color: var(--accent-color); /* Accent color on hover for footer/contact links */
+}
+
+
+/* General list styles */
 ul {
   list-style: none;
   text-align: left;
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  body {
+      padding-bottom: 60px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .logo {
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  .hamburger {
+      display: block;
+      align-self: flex-end;
+  }
+
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      position: static;
+      box-shadow: none;
+  }
+
+  .nav-links.active {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Re-add shadow for active state on mobile */
+  }
+
+  .nav-links.active li {
+      margin-left: 0;
+      border-bottom: 1px solid var(--neutral-medium); /* Medium light border for mobile active nav items */
+  }
+
+  .nav-links.active a {
+      color: var(--neutral-dark); /* Dark text for mobile active nav links */
+  }
+
+  .nav-links a, .nav-links.active a { /* Target both states for consistent mobile nav link styling initially */
+      color: var(--neutral-dark); /* Dark text for mobile nav links (default mobile state before active) */
+  }
+  .nav-links a:hover, .nav-links a:focus, /* Hover states for mobile non-active */
+  .nav-links.active a:hover, .nav-links.active a:focus { /* Hover states for mobile active */
+      color: var(--accent-color); /* Accent color on hover for mobile nav links */
+  }
+
+
+  main {
+      padding: 10px;
+  }
+
+  #levels, #contact {
+      padding: 30px 15px;
+  }
+
+  .level-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* ... other CSS ... */
+
+/* --- Hamburger Icon Animation --- */
+.hamburger .bar-rotate-1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger .bar-rotate-2 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger .bar-hide {
+  opacity: 0;
+}
+
+/* --- Smooth Scrolling (CSS Part, mostly for potential scroll-snap if needed, JS handles actual smooth scroll) --- */
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling by default (can be overridden by JS if needed for more control) */
+}
+
+/* ... rest of your CSS ... */
