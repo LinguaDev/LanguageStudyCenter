@@ -55,37 +55,38 @@
     window.addEventListener('scroll', updateProgressBar);
     window.addEventListener('load', updateProgressBar); // Initial update on page load
 
-
     /* ------------------------------------ */
     /* 3. Donation Message Functionality */
     /* ------------------------------------ */
 
     const donationMessage = document.getElementById('donation-message');
+    const donationCloseButton = donationMessage.querySelector('.cancel-button'); // Get the close button using querySelector
 
     function showDonationMessage() {
-        donationMessage.removeAttribute('hidden'); // Use hidden attribute for visibility control
-        donationMessage.setAttribute('aria-hidden', 'false'); // Update aria-hidden for accessibility
+        donationMessage.removeAttribute('hidden');
+        donationMessage.setAttribute('aria-hidden', 'false');
     }
 
     function hideDonationMessage() {
-        donationMessage.setAttribute('hidden', 'hidden'); // Use hidden attribute to hide
-        donationMessage.setAttribute('aria-hidden', 'true'); // Update aria-hidden for accessibility
+        donationMessage.setAttribute('hidden', 'hidden');
+        donationMessage.setAttribute('aria-hidden', 'true');
     }
 
-    // Attach hideDonationMessage to the close button directly in HTML (onclick="hideDonationMessage()")
+    // Attach event listener to the close button
+    if (donationCloseButton) {
+        donationCloseButton.addEventListener('click', hideDonationMessage);
+    }
 
     // Show the message after 5 minutes (300000 milliseconds)
     setTimeout(showDonationMessage, 300000);
 
-
     /* ------------------------------------ */
     /* 4. Interactive Elements (Example - Expandable Overview - Already in HTML as <details>) */
-    /*     - Removed Example JS for Show/Hide Vocabulary, Exercises (Out of Scope/Not in HTML) */
+    /* - Removed Example JS for Show/Hide Vocabulary, Exercises (Out of Scope/Not in HTML) */
     /* ------------------------------------ */
 
     // No JavaScript needed for <details> element for basic expand/collapse functionality.
     // If you need custom JS interaction for other elements (e.g., exercises, interactive quizzes),
     // you would add event listeners and logic within this section, similar to the smooth scroll example.
-
 
 })(); // End IIFE
