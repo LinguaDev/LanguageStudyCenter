@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vocabulary Flashcard Game</title>
+    <style>
+        /* Reset default margins and ensure full height */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Ensure content stays within viewport */
+        #input-section, #quiz-section, #final-score-section {
+            flex: 1 0 auto;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        #progress-container {
+            width: 100%;
+            max-width: 500px; /* Limit width on larger screens */
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+        }
+
+        #progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: green;
+        }
+
+        #card-content {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%; /* Responsive width */
+            max-width: 300px; /* Maximum width */
+            min-height: 100px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #correct-button {
+            background-color: #4CAF50;
+        }
+
+        #partially-correct-button {
+            background-color: #FFEB3B;
+            color: black;
+        }
+
+        #incorrect-button {
+            background-color: #F44336;
+        }
+
+        #progress-text, #score {
+            font-size: 1.2em;
+            margin: 10px;
+        }
+
+        /* Responsive textarea */
+        #manual-input {
+            width: 90%;
+            max-width: 500px;
+            min-height: 150px;
+            resize: none; /* Prevent resizing */
+            box-sizing: border-box;
+            margin: 10px auto;
+            display: block;
+        }
+
+        /* Media queries for smaller devices */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+
+            #progress-text, #score {
+                font-size: 1em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Input Section -->
+    <div id="input-section">
+        <h1>Vocabulary Flashcard Game</h1>
+        <textarea id="manual-input" placeholder="Enter each term and definition on a new line, separated by a colon, e.g., apple: a fruit"></textarea>
+        <button id="start-button">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz-section" style="display: none;">
+        <h1>Vocabulary Flashcards</h1>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="progress-text">Memorized: 0 / 0</div>
+        <div id="card-content"></div>
+        <div id="controls"></div>
+    </div>
+
+    <!-- Final Score Section -->
+    <div id="final-score-section" style="display: none;">
+        <h1>Quiz Complete!</h1>
+        <p id="final-score"></p>
+        <button id="restart-button">Try Another List</button>
+    </div>
+
+    <script src="vocabulary-game.js"></script>
+</body>
+</html>

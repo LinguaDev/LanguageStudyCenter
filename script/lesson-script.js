@@ -78,3 +78,4 @@ function hideDonationMessage() {
 
 // Show the message after 5 minutes (300000 milliseconds)
 setTimeout(showDonationMessage, 300000);
+ 

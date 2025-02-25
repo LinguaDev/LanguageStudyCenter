@@ -3,73 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Lesson - Greetings</title>
+    <meta name="description" content="Learn English greetings at A1 level with videos, vocabulary, grammar, and interactive exercises.">
+    <meta name="author" content="Juan Pineda">
+    <title>English Lesson - Greetings | A1 Level</title>
     <link rel="stylesheet" href="../../css/lesson-style.css">
-    <link rel="stylesheet" href="../../css/donation-message.css"> </head>
+    <link rel="stylesheet" href="../../css/donation-message.css">
+</head>
 <body>
-
-    <header>
-        <h1>English Lesson - Greetings</h1>
+    <header role="banner">
+        <h1>English Lesson: Greetings</h1>
         <p>A1 Level - Unit 1: Introductions and Greetings</p>
     </header>
 
-    <main>
-        <div class="lesson-container"> 
-            <div class="lesson-content"> 
-                <section class="lesson-section" id="video">
-                    <h2>Video</h2>
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </section>
+    <main role="main">
+        <div class="lesson-container">
+            <section class="lesson-content">
+                <h2>Explore This Lesson</h2>
+                <details open>
+                    <summary>Lesson Overview</summary>
+                    <nav class="lesson-overview" aria-label="Lesson navigation">
+                        <a href="#video">Watch the Video</a> |
+                        <a href="#vocabulary">Learn Key Vocabulary</a> |
+                        <a href="#reading">Engage with the Reading</a> |
+                        <a href="#grammar">Master the Grammar</a> |
+                        <a href="#exercises">Practice with Exercises</a> |
+                        <a href="#resources">Discover More Resources</a> |
+                        <a href="#quiz">Test Your Knowledge</a>
+                    </nav>
+                </details>
 
-                <section class="lesson-section" id="vocabulary">
-                    <h2>Vocabulary</h2>
-                    <ul>
+                <article class="lesson-section" id="video">
+                    <h2>Video Lesson</h2>
+                    <div class="video-container">
+                        <iframe 
+                            width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="English Greetings Video Lesson" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </article>
+
+                <article class="lesson-section" id="vocabulary">
+                    <h2>Key Vocabulary</h2>
+                    <ul class="word-list" aria-label="Vocabulary terms">
                         <li>Hello</li>
                         <li>Hi</li>
                         <li>Good morning</li>
                     </ul>
-                    <audio controls>
-                        <source src="greetings-audio.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </section>
+                    <figure>
+                        <audio controls aria-label="Vocabulary pronunciation">
+                            <source src="greetings-audio.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <figcaption>Listen to the pronunciation</figcaption>
+                    </figure>
+                    <section class="vocabulary-game">
+                        <h3>Vocabulary Practice Game</h3>
+                        <iframe 
+                            src="../../Juegos/vocabulary-game.html" 
+                            frameborder="0" 
+                            width="100%" 
+                            height="400" 
+                            title="Vocabulary Practice Game">
+                        </iframe>
+                    </section>
+                </article>
 
-                <section class="lesson-section" id="reading ">
+                <article class="lesson-section" id="reading">
                     <h2>Interactive Reading - Reading While Listening (RWL)</h2>
-                    <p>Tips and exercises for pronunciation practice.</p>
-                </section>
+                    <p>Enhance your pronunciation with these tips and exercises.</p>
+                </article>
 
-                <section class="lesson-section" id="grammar">
-                    <h2>Grammar</h2>
-                    <p>Explanation of relevant grammar points.</p>
-                </section>
+                <article class="lesson-section" id="grammar">
+                    <h2>Grammar Focus</h2>
+                    <p>Understand the key grammar points for greetings.</p>
+                </article>
 
-                <section class="lesson-section" id="exercises">
-                    <h2>Exercises</h2>
-                    <p>Interactive exercises to practice the lesson content.</p>
-                </section>
+                <article class="lesson-section" id="exercises">
+                    <h2>Practice Exercises</h2>
+                    <p>Test your skills with interactive exercises.</p>
+                </article>
 
-                <section class="lesson-section" id="resources">
-                    <h2>External Resources</h2>
-                    <p>Links to helpful websites or tools.</p>
-                </section>
+                <article class="lesson-section" id="resources">
+                    <h2>Additional Resources</h2>
+                    <p>Explore more with these helpful links and tools.</p>
+                </article>
 
-                <section class="lesson-section" id="quiz">
-                    <h2>Quiz</h2>
-                    <a href="quiz.html" class="quiz-link">Take the Quiz</a>
-                </section>
+                <article class="lesson-section" id="quiz">
+                    <h2>Knowledge Quiz</h2>
+                    <a href="quiz.html" class="quiz-link" aria-label="Take the greetings quiz">Take the Quiz</a>
+                </article>
+            </section>
 
-            </div> 
-            <aside class="lesson-sidebar"> 
+            <aside class="lesson-sidebar" role="complementary">
                 <div class="progress-container">
                     <h3>Lesson Progress</h3>
-                    <progress id="lesson-progress" value="0" max="100"></progress>
+                    <progress 
+                        id="lesson-progress" 
+                        value="0" 
+                        max="100" 
+                        aria-label="Lesson completion percentage">
+                    </progress>
                     <p id="progress-text">0% Complete</p>
                 </div>
-                <nav>
-                    <h3>Lesson Navigation</h3>
+                <nav aria-label="Sidebar lesson navigation">
+                    <h3>Quick Navigation</h3>
                     <ul>
                         <li><a href="#video">Video</a></li>
                         <li><a href="#vocabulary">Vocabulary</a></li>
@@ -80,36 +123,48 @@
                         <li><a href="#quiz">Quiz</a></li>
                     </ul>
                 </nav>
-            </aside> 
-        </div> 
+            </aside>
+        </div>
     </main>
 
-    <footer>
-        <h3>Contact Me</h3>
-        <p>I'd love to hear from you!</p>
-        <p>Email: juancanales5019@gmail.com</p>
-        <p>Phone: +505-5751-4440</p>
+    <footer role="contentinfo">
+        <section class="footer-contact">
+            <h3>Contact Me</h3>
+            <p>I'd love to hear from you!</p>
+            <address>
+                <p>Email: <a href="mailto:juancanales5019@gmail.com">juancanales5019@gmail.com</a></p>
+                <p>Phone: <a href="tel:+50557514440">+505-5751-4440</a></p>
+            </address>
+        </section>
 
-        <h3>Support Those in Need</h3>
-        <p>If you'd like to contribute to a worthy cause in Nicaragua, please consider making a donation. Your generosity will make a real difference in the lives of those who need it most.</p>
-
-        <form action="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" method="post" target="_top">
-            <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="currency_code" value="USD">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
-        <p>(You can also donate directly via PayPal to: <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">paypal.me/JOHNJPC</a>)</p>
-        <p>© 2025 Juan Pineda</p>
+        <section class="footer-donation">
+            <h3>Support Those in Need</h3>
+            <p>Your donation can make a difference in Nicaragua. Every little bit helps!</p>
+            <form 
+                action="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" 
+                method="post" 
+                target="_blank" 
+                aria-label="Donate via PayPal">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID">
+                <input type="hidden" name="currency_code" value="USD">
+                <button type="submit" class="donate-button">
+                    <img 
+                        src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" 
+                        alt="Donate with PayPal">
+                </button>
+            </form>
+            <p>Or donate directly at: <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">paypal.me/JOHNJPC</a></p>
+        </section>
+        <p class="copyright">© 2025 Juan Pineda. All rights reserved.</p>
     </footer>
 
-    <div id="donation-message">
-        <p>Enjoying the free lessons? Consider supporting our project with a small donation!</p>
+    <div id="donation-message" role="dialog" aria-hidden="true">
+        <p>Enjoying the free lessons? Please consider a small donation to support our project!</p>
         <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">
-            <button>Donate via PayPal</button>
+            <button aria-label="Donate via PayPal">Donate Now</button>
         </a>
-        <button onclick="hideDonationMessage()">Close</button>
+        <button onclick="hideDonationMessage()" aria-label="Close donation message">Close</button>
     </div>
 
     <script src="../../script/lesson-script.js"></script>

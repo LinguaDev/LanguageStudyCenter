@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read & Listen Language Learning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        #audio-controls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        #text-container {
+            margin-top: 80px;
+            font-size: 18px;
+            line-height: 1.6;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .highlight {
+            background-color: #ffeb3b;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        #progress-bar {
+            width: 100%;
+            height: 5px;
+            background: #ddd;
+            margin: 10px 0;
+        }
+
+        #progress {
+            height: 100%;
+            background: #4CAF50;
+            width: 0%;
+        }
+
+        button {
+            padding: 8px 16px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="audio-controls">
+        <button id="play-pause">Play</button>
+        <span id="time-display">0:00 / 0:00</span>
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+    </div>
+
+    <div id="text-container">
+        <p>[[This is where your text goes. Separate it into phrases or sentences that match the audio timing.]]</p>
+        <p>[[Example text line 1]]</p>
+        <p>[[Example text line 2]]</p>
+        <p>[[Example text line 3]]</p>
+    </div>
+
+    <script>
+        // Sample audio URL - replace with your actual audio file URL
+        const audioUrl = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
+        
+        // Sample timing data - replace with your actual timing data
+        const timeSegments = [
+            { start: 0, end: 2, element: 0 },  // First text element
+            { start: 2, end: 4, element: 1 },  // Second text element
+            { start: 4, end: 6, element: 2 },  // Third text element
+        ];
+
+        const audio = new Audio(audioUrl);
+        const playPauseBtn = document.getElementById('play-pause');
+        const timeDisplay = document.getElementById('time-display');
+        const progress = document.getElementById('progress');
+        const textElements = document.querySelectorAll('#text-container p');
+
+        let isPlaying = false;
+
+        audio.addEventListener('loadedmetadata', () => {
+            timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            // Update progress bar
+            const progressPercent = (audio.currentTime / audio.duration) * 100;
+            progress.style.width = `${progressPercent}%`;
+            
+            // Update time display
+            timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+            
+            // Highlight current text
+            timeSegments.forEach(segment => {
+                if (audio.currentTime >= segment.start && audio.currentTime < segment.end) {
+                    textElements.forEach(el => el.classList.remove('highlight'));
+                    textElements[segment.element].classList.add('highlight');
+                }
+            });
+        });
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            playPauseBtn.textContent = 'Play';
+            textElements.forEach(el => el.classList.remove('highlight'));
+        });
+
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.play();
+            }
+            isPlaying = !isPlaying;
+            playPauseBtn.textContent = isPlaying ? 'Pause' : 'Play';
+        });
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            seconds = Math.floor(seconds % 60);
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Click on text to seek to corresponding time
+        textElements.forEach((el, index) => {
+            el.style.cursor = 'pointer';
+            el.addEventListener('click', () => {
+                const segment = timeSegments.find(s => s.element === index);
+                if (segment) {
+                    audio.currentTime = segment.start;
+                    if (!isPlaying) audio.play();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

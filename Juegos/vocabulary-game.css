@@ -1,0 +1,130 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#input-section, #quiz-section, #final-score-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#quiz-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#card-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#card-content:hover {
+    transform: scale(1.02);
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#options button {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    background-color: #f8f9fa;
+    color: black;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#options button:hover:not(:disabled) {
+    background-color: #e9ecef;
+}
+
+#options button.correct {
+    background-color: #28a745;
+    color: white;
+}
+
+#options button.incorrect {
+    background-color: #dc3545;
+    color: white;
+}
+
+#word {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+#feedback {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+#progress, #score {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+#final-score {
+    font-size: 18px;
+    color: #333;
+    margin: 20px 0;
+}
