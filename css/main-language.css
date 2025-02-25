@@ -1,98 +1,237 @@
-/* style.css */
+/* Improved CSS for Learn Spanish Page */
+
+/* CSS Reset (Simplified) */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Color Palette (Consistent with previous styles) */
+:root {
+    --primary-color: #2E7D32;        /* Green - Primary color, header, footer */
+    --secondary-color: #FFC107;     /* Amber/Gold - Highlights, accents */
+    --accent-color: #B2FF59;        /* Lime Green - Hover/interactive elements */
+    --neutral-light: #F9F9F9;       /* Light Grey - Backgrounds */
+    --neutral-medium: #E0E0E0;      /* Medium Grey - Borders, subtle UI */
+    --neutral-dark: #333333;        /* Dark Grey - Primary text */
+    --text-color-light: #FFFFFF;     /* White - Text on primary backgrounds */
+}
+
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
+    color: var(--neutral-dark); /* Primary text color */
+    background-color: var(--neutral-light); /* Light background */
 }
 
+/* Header Styling */
 header {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center; /* Center the header content */
+    background-color: var(--primary-color); /* Primary header background */
+    padding: 30px 20px; /* Increased padding for a more spacious header */
+    text-align: center;
+    color: var(--text-color-light); /* Light text color for header */
 }
 
+header h1 {
+    font-size: 2.5em; /* Larger heading for page title */
+    margin-bottom: 15px; /* Spacing below the main heading */
+}
+
+/* Navigation Styling */
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0; /* Add some margin around the navigation list */
+    margin: 20px 0; /* More margin around navigation */
 }
 
 nav li {
-    display: inline;
-    margin: 0 15px; /* Add space between list items */
+    display: inline-block; /* Display inline but as blocks for spacing */
+    margin: 0 15px;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color-light); /* Light navigation link color */
     font-weight: bold;
+    padding: 0.6em 1em; /* Padding for better link hit area */
+    border-radius: 5px; /* Rounded corners for navigation links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-#hero {
-    background-image: url('hero-image.jpg'); /* Replace with your image */
+nav a:hover,
+nav a:focus {
+    background-color: var(--secondary-color); /* Amber background on hover */
+    color: var(--neutral-dark); /* Dark text on hover */
+}
+
+/* Hero Section (if you intend to add one later, styles are prepared) */
+/* #hero {
+    background-image: url('hero-image.jpg'); /* Replace with your image
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 100px 0;
+    padding: 150px 0; /* Increased padding for hero section
     text-align: center;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 900px; /* Wider hero content area
     margin: 0 auto;
 }
 
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+} */
+
+
+/* Levels Section Styling */
 #levels {
-    padding: 40px;
+    padding: 60px 20px; /* More padding for levels section */
     text-align: center;
+}
+
+#levels h2 {
+    font-size: 2em;
+    margin-bottom: 30px; /* More spacing below section heading */
+    color: var(--primary-color); /* Primary color for section heading */
 }
 
 .level-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider level cards */
+    gap: 30px; /* Increased gap in level grid */
+    margin-top: 30px;
 }
 
 .level-card {
-    border: 1px solid #ddd;
-    padding: 20px;
+    border: 1px solid var(--neutral-medium); /* Medium grey border for level cards */
+    padding: 30px; /* More padding inside level cards */
     text-align: center;
-    border-radius: 8px;
-    transition: transform 0.2s; /* Add a smooth transition for hover effect */
+    border-radius: 10px;
+    background-color: var(--neutral-light); /* Light background for level cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transition */
 }
 
-.level-card:hover {
-    transform: scale(1.05); /* Scale up slightly on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.level-card:hover,
+.level-card:focus-within {
+    transform: scale(1.08); /* Slightly more scale on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    background-color: var(--accent-color); /* Accent color on hover */
 }
 
-#resources, #courses, footer {
-    padding: 40px;
-    text-align: center;
+.level-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
+.level-card h3 a {
+    text-decoration: none;
+    color: var(--primary-color); /* Primary color for level titles */
+    transition: color 0.3s ease;
+}
+
+.level-card h3 a:hover,
+.level-card h3 a:focus {
+    color: var(--neutral-dark); /* Dark text for level titles on hover */
+}
+
+.level-card p {
+    color: var(--neutral-dark); /* Dark text for level descriptions */
+}
+
+
+/* Footer Styling */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    background-color: var(--primary-color); /* Primary color for footer */
+    color: var(--text-color-light); /* Light text in footer */
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px; /* More margin to separate footer from content */
 }
 
-/* Responsive adjustments */
+footer h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-size: 0.95em;
+    opacity: 0.9; /* Slightly reduced opacity for footer text */
+}
+
+footer a {
+    color: var(--secondary-color); /* Amber links in footer */
+    text-decoration: underline; /* Keep underlines for accessibility */
+    transition: color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+    color: var(--accent-color); /* Accent color on hover for footer links */
+}
+
+
+/* General List Styling */
+ul {
+    list-style-type: none;
+    text-align: center; /* Center align list items if needed */
+}
+
+
+/* Responsive Adjustments for Smaller Screens */
 @media (max-width: 768px) {
+    header {
+        padding: 20px 10px; /* Adjust header padding on smaller screens */
+    }
+
+    header h1 {
+        font-size: 2em; /* Slightly smaller main heading on mobile */
+    }
+
+    nav ul {
+        margin: 15px 0; /* Adjust navigation margin on mobile */
+    }
+
     nav li {
-        display: block; /* Stack navigation items vertically */
-        margin: 10px 0; /* Add vertical margin */
+        display: block; /* Stack navigation items vertically on mobile */
+        margin: 10px 0;
+    }
+
+    nav a {
+        display: block; /* Full width navigation links on mobile */
+        padding: 0.8em 1.2em;
+        text-align: center;
+    }
+
+    #levels {
+        padding: 40px 15px; /* Adjust levels section padding on mobile */
+    }
+
+    #levels h2 {
+        font-size: 1.8em; /* Slightly smaller section heading on mobile */
     }
 
     .level-grid {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-template-columns: 1fr; /* Single column level grid on mobile */
+        gap: 20px; /* Adjust gap on mobile */
     }
-}
 
-ul {
-    list-style-type: none;
-    text-align: center;
+    .level-card {
+        padding: 25px; /* Adjust level card padding on mobile */
+    }
+
+    footer {
+        padding: 20px 10px; /* Adjust footer padding on mobile */
+        margin-top: 40px; /* Adjust footer margin on mobile */
+    }
 }
