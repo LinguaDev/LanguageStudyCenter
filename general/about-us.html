@@ -3,59 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Learning Center - About Us</title>
+    <title>Language Learning Center - About Us | Discover Our Story</title>
     <link rel="stylesheet" href="../css/about.css"> </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="../index.html">Home</a></li> 
-                <li><a href="../spanish/main-spanish.html">Learn Spanish</a></li> 
-                <li><a href="../english/main-english.html">Learn English</a></li> 
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../spanish/main-spanish.html" class="nav-link">Learn Spanish</a></li>
+                <li><a href="../english/main-english.html" class="nav-link">Learn English</a></li>
+                <li>
+                    <button id="lang-toggle-en" class="lang-btn active">English</button>
+                    <button id="lang-toggle-es" class="lang-btn">Español</button>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="about-us">
-            <h2>About LLC and a bit about Me!</h2>
+            <h2 class="en">Welcome to Our Language Learning Community!</h2>
+            <h2 class="es hidden">¡Bienvenido a Nuestra Comunidad de Aprendizaje de Idiomas!</h2>
+
             <div class="about-content">
                 <img src="../images/Juan.png" alt="Juan Pineda" class="about-image">
+                <div>
+                    <section id="llc-intro">
+                        <h3 class="en">Our Mission</h3>
+                        <h3 class="es hidden">Nuestra Misión</h3>
+                        <p class="en">At the Language Learning Center (LLC), we believe that language is the key to unlocking global opportunities and fostering meaningful connections. Founded by Juan Pineda, a passionate Nicaraguan educator, LLC is dedicated to making language learning accessible to everyone, everywhere.</p>
+                        <p class="es hidden">En el Language Learning Center (LLC), creemos que el lenguaje es la llave para desbloquear oportunidades globales y fomentar conexiones significativas. Fundado por Juan Pineda, un apasionado educador nicaragüense, LLC se dedica a hacer que el aprendizaje de idiomas sea accesible para todos, en todas partes.</p>
 
-                <div> 
-                    <p>Welcome to the Language Learning Center! I'm Juan Pineda, a Nicaraguan English and Spanish teacher, and I'm thrilled to share this project with you. All the resources on this site are completely free to use. I'm currently developing this platform as a way to practice and improve my web development skills, and I'm hosting it on GitHub.</p>
+                        <p class="en">This platform is more than just a website; it's a personal project born from a desire to blend a love for languages with the dynamic world of web development.  Everything you find here is offered completely free of charge, as part of my commitment to democratizing education and honing my web development skills. Hosted proudly on GitHub, this is a testament to open education and continuous improvement.</p>
+                        <p class="es hidden">Esta plataforma es más que solo un sitio web; es un proyecto personal nacido del deseo de fusionar el amor por los idiomas con el mundo dinámico del desarrollo web. Todo lo que encuentras aquí se ofrece de forma completamente gratuita, como parte de mi compromiso con la democratización de la educación y el perfeccionamiento de mis habilidades de desarrollo web.  Hospedado con orgullo en GitHub, esto es un testimonio de la educación abierta y la mejora continua.</p>
+                    </section>
 
-                    <p>My goal is to make language learning accessible to everyone. I believe that language opens doors to new opportunities and connections, and I'm passionate about helping others achieve their language learning goals. I hope you find the materials here useful!</p>
+                    <section id="juan-pineda-bio">
+                        <h3 class="en">Meet Juan Pineda</h3>
+                        <h3 class="es hidden">Conoce a Juan Pineda</h3>
+                        <p class="en">Hello! I'm Juan Pineda, the heart behind the Language Learning Center. As a Nicaraguan teacher of both English and Spanish, I've witnessed firsthand the transformative power of language education.  This project is a labor of love, combining my teaching experience with my journey into web development. My aim is simple: to provide valuable, free resources that empower you on your language learning journey.</p>
+                        <p class="es hidden">¡Hola! Soy Juan Pineda, el corazón detrás del Language Learning Center. Como profesor nicaragüense de inglés y español, he sido testigo de primera mano del poder transformador de la educación de idiomas. Este proyecto es un trabajo de amor, que combina mi experiencia docente con mi incursión en el desarrollo web. Mi objetivo es simple: proporcionar recursos valiosos y gratuitos que te empoderen en tu viaje de aprendizaje de idiomas.</p>
+                    </section>
 
-                    <h3>About Me</h3>
-                    <p>I'm Juan Pineda, a Nicaraguan English and Spanish teacher. This project is a personal initiative to combine my passion for languages with my growing interest in web development. I'm excited to share my work and contribute to the language learning community.</p>
-
-                    <h3>Contact Me</h3>
-                    <p>I'd love to hear from you!</p>
-                    <p>Email: juancanales5019@gmail.com</p>
-                    <p>Phone: +505-5751-4440</p>
+                    <section id="contact-info">
+                        <h3 class="en">Connect With Me</h3>
+                        <h3 class="es hidden">Conéctate Conmigo</h3>
+                        <p class="en">I'm always excited to connect with learners and fellow educators.  Whether you have questions, feedback, or just want to share your language learning successes, I'd love to hear from you!</p>
+                        <p class="es hidden">Siempre me emociona conectar con estudiantes y colegas educadores. Ya sea que tengas preguntas, comentarios o simplemente quieras compartir tus éxitos en el aprendizaje de idiomas, ¡me encantaría saber de ti!</p>
+                        <p class="en">Email: <a href="mailto:juancanales5019@gmail.com">juancanales5019@gmail.com</a></p>
+                        <p class="es hidden">Email: <a href="mailto:juancanales5019@gmail.com">juancanales5019@gmail.com</a></p>
+                        <p class="en">Phone: <a href="tel:+505-5751-4440">+505-5751-4440</a></p>
+                        <p class="es hidden">Teléfono: <a href="tel:+505-5751-4440">+505-5751-4440</a></p>
+                    </section>
                 </div>
             </div>
 
-            <div>
-                <h3>Support Those in Need</h3>
-                <p>If you'd like to contribute to a worthy cause in Nicaragua, please consider making a donation. Your generosity will make a real difference in the lives of those who need it most.</p>
+            <section id="support-cause">
+                <h3 class="en">Empower Education in Nicaragua</h3>
+                <h3 class="es hidden">Empodera la Educación en Nicaragua</h3>
+                <p class="en">Your support can make a significant impact!  If you've found value in the resources offered by the Language Learning Center, please consider contributing to a meaningful cause. Donations, no matter the size, directly support educational initiatives in Nicaragua, helping to provide opportunities and resources to those in need.  Together, we can make a difference.</p>
+                <p class="es hidden">¡Tu apoyo puede tener un impacto significativo! Si has encontrado valor en los recursos ofrecidos por el Language Learning Center, considera contribuir a una causa valiosa. Las donaciones, sin importar el tamaño, apoyan directamente las iniciativas educativas en Nicaragua, ayudando a brindar oportunidades y recursos a quienes más lo necesitan. Juntos, podemos hacer la diferencia.</p>
 
-                <form action="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" method="post" target="_top">
+                <form action="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" method="post" target="_top" class="paypal-form">
                     <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="currency_code" value="USD">
                     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">
                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                 </form>
-                <p>(You can also donate directly via PayPal to: <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">paypal.me/JOHNJPC</a>)</p>
-            </div>
+                <p class="en">(You can also donate directly via PayPal to: <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">paypal.me/JOHNJPC</a>)</p>
+                <p class="es hidden">(También puedes donar directamente vía PayPal a: <a href="https://paypal.me/JOHNJPC?country.x=NI&locale.x=es_XC" target="_blank">paypal.me/JOHNJPC</a>)</p>
+            </section>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Juan Pineda. All rights reserved.</p>
+        <p class="en">&copy; 2025 Juan Pineda. All rights reserved.</p>
+        <p class="es hidden">&copy; 2025 Juan Pineda. Todos los derechos reservados.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="../script/about-us.js"></script>
 </body>
 </html>

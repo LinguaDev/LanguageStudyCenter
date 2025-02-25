@@ -1,114 +1,235 @@
-/* A1-main.css - Egypt Sand Desert Mode */
+/* A1-main.css - Serene Ocean Theme */
 
-body {
-    font-family: 'Playfair Display', serif; /* Fuente elegante con serifas */
-    margin: 0;
-    line-height: 1.6;
-    color: #5a5245; /* Marrón arenoso oscuro para el texto principal */
-    background-color: #f5f0e1; /* Beige arena claro para el fondo */
-}
-
-header {
-    background-color: #d2b48c; /* Marrón arena medio para el encabezado */
-    color: #332c25; /* Marrón oscuro para el texto del encabezado */
-    padding: 20px 0;
-    text-align: center;
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.navbar a {
-    color: #332c25; /* Marrón oscuro para los enlaces */
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: rgba(51, 44, 37, 0.2); /* Marrón oscuro semitransparente al pasar el ratón */
-    color: #1a1714; /* Marrón muy oscuro al pasar el ratón */
-}
-
-.header-content {
-    margin-bottom: 20px;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 1.2em;
-    color: #797164; /* Marrón arenoso claro para el subtítulo */
-}
-
-.course-info {
-    padding: 40px 0;
-    background-color: #f8f4e6; /* Beige arena muy claro para la sección principal */
-}
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h2 {
-    color: #8b4513; /* Marrón óxido para los encabezados de sección */
-    margin-bottom: 20px;
-}
-
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #b85c00; /* Naranja quemado para el botón */
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #924a00; /* Naranja quemado más oscuro al pasar el ratón */
-}
-
-footer {
-    background-color: #d2b48c; /* Marrón arena medio para el pie de página */
-    color: #332c25; /* Marrón oscuro para el texto del pie de página */
-    text-align: center;
-    padding: 10px 0;
-}
-
-/* Estilos para hacerlo responsivo (sin cambios de la versión anterior, puedes mantenerlos) */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 10px;
+/*  --------------------------------------------
+    Color Palette - Serene Ocean
+    -------------------------------------------- */
+    :root {
+        --primary-ocean-light: #e0f7fa;     /* Very Light Cyan - Main Background */
+        --secondary-ocean-medium: #b2ebf2;  /* Light Cyan - Header, Footer Background */
+        --accent-ocean-coral: #ff7043;      /* Deep Orange A200 - CTA Button */
+        --accent-ocean-teal: #26a69a;       /* Teal 600 - Secondary Accent/Highlights */
+        --text-ocean-dark: #004d40;         /* Teal 900 - Dark Text */
+        --text-ocean-medium: #00796b;        /* Teal 800 - Medium Text */
+        --text-ocean-light: #26a69a;         /* Teal 600 - Light Text/Subtitles */
+        --nav-link-hover-bg-ocean: rgba(0, 77, 64, 0.1); /* Teal 900 with opacity - Nav Hover Background */
+        --nav-link-hover-text-ocean: #004d40; /* Teal 900 - Nav Hover Text */
+        --card-border-ocean: #80deea;         /* Cyan 200 - Card Border */
     }
-
-    h1 {
-        font-size: 2em;
+    
+    /*  --------------------------------------------
+        Tipografía y Reset Básico
+        -------------------------------------------- */
+    body {
+        font-family: 'Nunito Sans', sans-serif; /* Modern, clean sans-serif font */
+        margin: 0;
+        line-height: 1.7;
+        color: var(--text-ocean-medium); /* Medium Teal - Main text color */
+        background-color: var(--primary-ocean-light); /* Very Light Cyan - Background */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 16px;
     }
-
+    
+    /*  --------------------------------------------
+        Encabezado (Header)
+        -------------------------------------------- */
+    header {
+        background-color: var(--secondary-ocean-medium); /* Light Cyan - Header Background */
+        color: var(--text-ocean-dark); /* Dark Teal - Header Text */
+        padding: 40px 0;
+        text-align: center;
+    }
+    
+    /* Navegación Principal (Navbar) */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    
     .navbar a {
-        padding: 10px 15px;
-        margin: 0 5px;
+        color: var(--text-ocean-dark); /* Dark Teal - Nav Links */
+        text-decoration: none;
+        padding: 12px 25px;
+        margin: 0 15px;
+        border-radius: 25px; /* Pill-shaped navigation links */
+        transition: background-color 0.3s ease, color 0.3s ease;
+        font-weight: 600;
     }
-}
+    
+    .navbar a:hover,
+    .navbar a:focus {
+        background-color: var(--nav-link-hover-bg-ocean); /* Light Teal Hover Background */
+        color: var(--nav-link-hover-text-ocean); /* Darker Teal Hover Text */
+    }
+    
+    /* Contenido del Encabezado */
+    .header-content {
+        margin-bottom: 30px;
+    }
+    
+    h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        color: var(--text-ocean-dark); /* Dark Teal - Main Heading */
+    }
+    
+    .subtitle {
+        font-size: 1.3em;
+        color: var(--text-ocean-light); /* Light Teal - Subtitle */
+        font-style: italic;
+    }
+    
+    /*  --------------------------------------------
+        Sección Principal del Curso (Course Info)
+        -------------------------------------------- */
+    .content-section {
+        padding: 50px 0;
+        background-color: var(--primary-ocean-light); /* Very Light Cyan - Section Background */
+    }
+    
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    h2 {
+        color: var(--accent-ocean-teal); /* Teal Accent - Section Headings */
+        margin-bottom: 20px;
+        border-bottom: 2px solid var(--accent-ocean-teal); /* Teal Underline for Headings */
+        padding-bottom: 10px;
+    }
+    
+    .section-intro {
+        font-size: 1.15em;
+        color: var(--text-ocean-light); /* Light Teal - Section Intro Text */
+        margin-bottom: 25px;
+    }
+    
+    ul.learn-list,
+    ul.features-list,
+    ol.lesson-list {
+        list-style-type: disc;
+        padding-left: 25px;
+        margin-bottom: 25px;
+    }
+    
+    ul.features-list {
+        list-style-type: circle; /* Different list style for features */
+    }
+    
+    ol.lesson-list {
+        list-style-type: decimal;
+        padding-left: 30px;
+    }
+    
+    ul li, ol li {
+        margin-bottom: 8px;
+    }
+    
+    .cta-button {
+        display: inline-block;
+        background-color: var(--accent-ocean-coral); /* Coral Accent - CTA Button */
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 30px; /* More Rounded Button */
+        font-size: 1.2em;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .cta-button:hover,
+    .cta-button:focus {
+        background-color: #e65100; /* Darker Coral on Hover */
+        transform: scale(1.05);
+    }
+    
+    /*  --------------------------------------------
+        Pie de Página (Footer)
+        -------------------------------------------- */
+    footer {
+        background-color: var(--secondary-ocean-medium); /* Light Cyan - Footer Background */
+        color: var(--text-ocean-dark); /* Dark Teal - Footer Text */
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+    }
+    
+    footer h3 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        color: var(--text-ocean-dark); /* Dark Teal - Footer Headings */
+    }
+    
+    footer p, footer a {
+        font-size: 1em;
+        color: var(--text-ocean-medium); /* Medium Teal - Footer Text and Links */
+        opacity: 0.9;
+    }
+    
+    footer a {
+        color: var(--accent-ocean-coral); /* Coral Accent - Footer Links */
+        text-decoration: underline;
+    }
+    
+    footer a:hover,
+    footer a:focus {
+        color: #f4511e; /* Brighter Coral on Hover */
+    }
+    
+    /*  --------------------------------------------
+        Tarjetas de Nivel (Level Cards) - Example Styles
+        If you decide to add level cards to this page, these are example styles
+        -------------------------------------------- */
+    .level-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .level-card {
+        border: 1px solid var(--card-border-ocean); /* Light Blue Border for Cards */
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: white; /* White Background for Level Cards */
+        transition: transform 0.2s;
+    }
+    
+    .level-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .level-card h3 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        color: var(--accent-ocean-teal); /* Teal Accent - Level Card Headings */
+    }
+    
+    .level-card p {
+        font-size: 0.95em;
+        color: var(--text-ocean-medium); /* Medium Teal - Level Card Text */
+    }
+    
+    
+    /*  --------------------------------------------
+        Ajustes Responsivos (Media Queries)
+        -------------------------------------------- */
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 10px;
+        }
+    
+        h1 {
+            font-size: 2.3em;
+        }
+    
+        .navbar a {
+            padding: 10px 15px;
+            margin: 0 5px;
+        }
+    }

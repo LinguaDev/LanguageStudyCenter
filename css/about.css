@@ -1,82 +1,221 @@
-/* about.css */
+/* about.css - Improved version with "Serene Ocean" theme, multilingual support, and enhanced donation section */
 
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    display: flex; /* For pushing the footer */
-    flex-direction: column; /* Stack elements vertically */
-    min-height: 100vh; /* Ensure body is at least viewport height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+    background-color: #35424a; /* Serene Ocean header color */
+    color: white;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid; /* Accent border */
+    text-align: left;
 }
 
-nav ul {
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+header nav ul {
     padding: 0;
+    margin: 0;
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+header nav ul li {
+    margin-left: 15px;
 }
 
-nav a {
-    color: #fff;
+header nav ul li:first-child {
+    margin-left: 0;
+}
+
+header nav ul li a {
+    color: white;
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: #e8491d;
+    color: white;
+}
+
+/* Language Button Styling */
+header nav ul li button.lang-btn {
+    background: none;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+header nav ul li button.lang-btn.active,
+header nav ul li button.lang-btn:hover {
+    background-color: #e8491d;
+    color: white;
+    border-color: #e8491d;
+}
+
+header nav ul li button.lang-btn:focus {
+    outline: none;
 }
 
 main {
     padding: 20px;
-    max-width: 960px;
+    max-width: 1100px;
     margin: 20px auto;
-    background: #fff;
+    background-color: white;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Allow main to expand to fill available space */
+    flex: 1;
 }
 
 h2 {
-    color: #333;
+    color: #35424a; /* Serene Ocean dark heading color */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .about-content {
     display: flex;
-    flex-direction: column; /* Vertical layout by default */
-    align-items: center;  /* Center content horizontally */
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .about-image {
-    max-width: 200px;
+    width: 250px;
     border-radius: 50%;
+    margin-right: 20px;
     margin-bottom: 20px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
 }
 
+.about-content > div {
+    flex: 1;
+}
+
+#about-us h3 {
+    color: #e8491d; /* Accent color for subheadings */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+#about-us p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Enhanced Donation Section Styling (NLP Inspired) */
+#support-cause {
+    margin-top: 40px; /* Increased margin to stand out more */
+    padding: 30px;      /* Increased padding for spacious feel */
+    background-color: #f8f0e3; /* Very light beige background - warmer, inviting */
+    border-radius: 12px;    /* More rounded corners for softer look */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow - depth & importance */
+    border: 1px solid #e0d8c0; /* Soft border to define the section */
+}
+
+#support-cause h3 {
+    color: #35424a;      /* Dark heading color retained */
+    font-size: 1.8em;   /* Slightly larger heading for emphasis */
+    margin-bottom: 20px;
+    text-align: center;  /* Center align heading in donation section */
+}
+
+#support-cause p {
+    margin-bottom: 25px; /* Increased paragraph margin */
+    color: #666;         /* Slightly darker paragraph color for readability */
+    line-height: 1.8;    /* Increased line-height for better readability and inviting text block */
+    text-align: center;  /* Center align paragraph text in donation section */
+    font-size: 1.1em;    /* Slightly larger font-size for paragraph text */
+}
+
+.paypal-form {
+    text-align: center; /* Center PayPal form */
+}
+
+.paypal-form input[type="image"] { /* Style the PayPal donate button image */
+    width: auto;       /* Adjust width to content */
+    max-width: 200px;   /* Maximum width to control size */
+    height: auto;      /* Maintain aspect ratio */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.paypal-form input[type="image"]:hover {
+    transform: scale(1.05); /* Slight scale up on hover for interactivity */
+}
+
+
 footer {
-    background: #333;
-    color: #fff;
+    background-color: #35424a; /* Serene Ocean footer color */
+    color: white;
     text-align: center;
-    padding: 1rem 0;
-    position: relative; /* Sticky footer */
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none !important;
 }
 
 /* Media Queries for Responsiveness */
 @media (min-width: 768px) {
     .about-content {
-        flex-direction: row; /* Horizontal layout on larger screens */
-        justify-content: space-around; /* Distribute space around items */
-        align-items: flex-start; /* Align to top of container */
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 30px;
     }
 
     .about-image {
-        margin-bottom: 0; /* Remove bottom margin in horizontal layout */
+        margin-bottom: 0;
+    }
+
+    header nav {
+        justify-content: flex-start;
+    }
+
+    header nav ul {
+        margin-left: auto;
+    }
+
+    #support-cause h3, #support-cause p {
+        text-align: left; /* Revert text align to left on larger screens in donation section if desired */
+    }
+
+    .paypal-form {
+        text-align: left; /* Revert paypal form to left align if desired */
     }
 }
